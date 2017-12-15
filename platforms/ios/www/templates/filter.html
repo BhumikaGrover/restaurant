@@ -1,0 +1,72 @@
+
+     <ion-modal-view>
+
+     <div class="bar bar-header item-input-inset footermy" >
+  <button class="button button-clear icon ion-ios-arrow-back" ng-click = "closeModal1()" style="color:#fff;"></button>
+      <h1 class="title" style="color:#fff;">Filter</h1>
+   
+  
+
+</div>
+     
+     
+      
+   
+    <ion-content class="has-header" padding="true" style="background:#fefefe;">
+       <ion-list>
+       <div class="shortby">
+       	<p>SORT BY</p>
+        <div class="row shot_list">
+            <div class="col"><a class="active"><span><i class="fa fa-location-arrow" ng-click="filter()"></i></span>Distance</a></div>
+          <!--div class="col"><a class=""><span><i class="fa fa-usd"></i></span>Cost</a></div-->
+          <div class="col"><a class="active"><span><i class="fa fa-star" ng-click="filterev()"></i></span>Popularity</a></div>
+          <div class="col"><a class="active"><span><i class="fa fa-sort-alpha-asc" ng-click="filtername()"></i></span>Name</a></div>
+        </div>
+
+             </div>
+<!--           <div class="filter_top" style="padding: 0px 26px;" ng-repeat="filter in rest_types">
+       
+      	<ul>
+            
+        	<li class="active"><a href="#" ng-click="filtetypechi(filter.RestaurantsType.name)">{{filter.RestaurantsType.name}}</a></li>
+            <li class="active"><a href="#"ng-click="filtetypechi()">Chinese</a></li>
+            <li class="active"><a href="#"ng-click="filtetypeamerican()">American</a></li>
+            li><a href="#">Cafe</a></li>
+            <li><a href="#">Crill</a></li>
+            <li class="active"><a href="#">Fine Dining</a></li>
+            <li><a href="#">Casual Dining</a></li>
+            <li><a href="#">Lounge</a></li>
+            <li><a href="#">Pub</a></li
+        </ul>
+      </div>-->
+           
+        <div class="filter_top filter_top1">
+            <ul>
+                <li ng-repeat="fil in rest_types ">
+                    <input type="radio" name="a" ng-click="filtercater(fil.RestaurantsType.name)"/>
+                    <label>{{fil.RestaurantsType.name}}</label>
+                </li>
+            </ul>
+        </div>
+			 <!--div class="item item-icon-right filter_item">CUISINES
+                <i class="icon ion-ios-arrow-right"></i>
+             </div>
+             <div class="item item-icon-right filter_item">ADDITIONAL FILTERS</div>
+          <ion-checkbox class="filter_item item-icon-left" ng-model="filter.A"><i class="iconleft fa fa-glass"></i>Serves Alcohol</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.B"><i class="iconleft"><img width="12px" src="img/v.png"></i>Vegan</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.C"><i class="iconleft"><img width="12px" src="img/gf.png"></i>Gluten Free</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.D"><i class="iconleft ion-wifi"></i>Wifi</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.E"><i class="iconleft ion-card"></i>Credit Card</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.F"><i class="iconleft fa fa-tree"></i>Outdoor Seating</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.G"><i class="iconleft ion-android-globe"></i>Online Booking</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.H"><i class="iconleft fa fa-clock-o"></i>241</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.I"><i class="iconleft">%</i>50% Off</ion-checkbox>
+          <ion-checkbox class="filter_item" ng-model="filter.J"><i class="iconleft ion-social-usd"></i>Pay With Foodi</ion-checkbox-->
+          
+        
+        </ion-list>
+      
+      
+      
+    </ion-content>
+  </ion-modal-view>

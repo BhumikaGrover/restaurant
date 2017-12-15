@@ -1,0 +1,40 @@
+<ion-view style="" class=" " id="page4" title="Payment" hide-nav-bar="true">
+<ion-header-bar align-title="center" id="div1" class="bar-light map_header">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 class="title">Payment</h1>
+  
+</ion-header-bar>
+<ion-content padding="true" style="background: url(img/forgot.jpg) no-repeat center;background-size:cover; top:0;" class="manual-ios-statusbar-padding has-footer">
+       
+       <div class="payment_outer"><img width="30%" src="img/logo.png" /></div>
+       
+<div class="oi">
+        <div class="list card " style="background:none;">
+  <div class="item item-body" style="background:none;">
+    
+     <ion-list style="background:none;">
+      		<ion-radio class="crd_list" ng-model="choice" ng-value="'A'"><i class="ion-card" style="padding-right:10px;"></i>Credit Card</ion-radio>
+          <ion-radio class="crd_list" ng-model="choice" ng-value="'B'"><i class="ion-android-phone-portrait" style="padding-right:10px;"></i>Net Banking</ion-radio>
+          <ion-radio class="crd_list" ng-model="choice" ng-value="'C'"><i class="ion-cash" style="padding-right:10px;"></i>Paypal</ion-radio>
+    
+     </ion-list>
+    
+  </div>
+</div>
+</div>
+        
+        
+        
+        
+        
+        
+    </ion-content>
+    
+    <div class="bar bar-footer" style="background:#ef473a;">
+    <div class="button-bar button-clear  bar-positive">
+  <a class="button  button-clear" ui-sref="menu.confirmation">Next</a>
+</div>
+</div>
+</ion-view>

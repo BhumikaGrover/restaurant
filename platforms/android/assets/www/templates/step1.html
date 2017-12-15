@@ -1,0 +1,43 @@
+<ion-view title="Login" id="page3" hide-nav-bar="true">
+<ion-header-bar align-title="center" id="div1" class="" style="background: rgba(0, 81, 105, 0);">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back" style="color:#fff;"></i></button>
+  </div>
+  <h1 class="title" style="color:#fff;">Login</h1>
+</ion-header-bar>
+
+
+
+    <ion-content class="has-header" padding="true" style="background:url(img/slide2.jpg) no-repeat; background-size: cover; top: 0 ;">
+        <div style="width: 283px; height: 83px;" class="spacer"></div>
+        <div style="color:#fff;text-align:center;" id="step1-markdown1">
+            <p style="font-weight: 800;">Please provide us your Email <br />address</p>
+        </div>
+        <div style="width: 283px; height: 40px;" class="spacer"></div>
+        <form class="login_sec" name="step1" id="step1-form2" ng-submit="step1.$valid && mobile()" novalidate>
+            <label id="step1-input6" class="item-input input_border">
+                <input style="padding:10px;" placeholder="Email Address" type="email" name="email" ng-model="data.email" required>
+<!--                <link href="../css/style.css" rel="stylesheet" type="text/css"/>-->
+            </label>
+            <div ng-show="step1.$submitted || step1.email.$touched">
+     <div ng-show="step1.email.$error.required" class="assertive">Field required</div>
+        </div>
+     <span ng-show="!step1.email.$error.required && step1.email.$error.email && step1.email.$dirty" class="assertive">Invalid Email Address</span>
+             <label id="step1-input6" class="item-input input_border">
+                <input style="padding: 10px 10px;" placeholder="***********" type="password" name="password" ng-model="data.password" required>
+            </label>
+          <div ng-show="step1.$submitted || step1.password.$touched">
+        <div ng-show="step1.password.$error.required" class="assertive">Field required</div>
+        
+<!--        <div ng-show="step1.password.$error.pattern" class="assertive"> invalid pattern</div>-->
+        </div>
+         <div style="width: 283px; height: 27px;" class="spacer"></div>
+        <div class="custom_padding">
+            <button type="submit" class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px; color:#fff; border: 1px solid #fafcff !important;" id="step1-button4" style="">NEXT</button>
+        </div>
+        </form>
+        <div class="button_txt" id="step1-button5" style="color: #fff !important; text-align: center;">Have no Account? <span><a ui-sref="menu.createProfile"  style="color: #00b1c2;">Sign Up</a></span></div>
+         <div class="button_txt" id="step1-button5" style="color: #fff !important; text-align: center;"><span><a ui-sref="menu.forgetpassword" style="color: #00b1c2;">Forgot Password </a></span></div>
+    </ion-content>
+   
+</ion-view>

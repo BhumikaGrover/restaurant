@@ -1,0 +1,30 @@
+<ion-view style="" class=" " id="page4" title="Confirmation" hide-nav-bar="true">
+
+
+    
+    <div class="bar bar-header item-input-inset" style="padding-left:0; padding-right: 0;">
+        <form ng-submit="search()" style="width: 100%;">
+            <div class="row">
+                <div class="col-80">
+            <label class="item-input-wrapper" style="float: left;width: 100%; margin-top: 0 !important;">
+    <i class="icon ion-ios-location-outline placeholder-icon"></i>
+    <input style="border-bottom:none; margin-top: 3px; padding-top: 0;" type="text" g-places-autocomplete options="autocompleteOptions" ng-model="data.city" placeholder="Search"  details="details"  >
+<!--    <input style="border-bottom:none; margin-top: 3px; padding-top: 0;" type="text"   placeholder="Search"   id="autocomplete"  onkeyup="initialize()"  autocomplete="on" />-->
+    </label>
+                </div>
+                <div class="col-10">
+                    
+    <button style="border-bottom:none;width: 100%;padding-top: 2px;" type="submit" class="icon placeholder-icon button-clear"><img src="img/search_loc.png" ></button>
+                </div>
+                <div class="col-10">
+    <button style="border-bottom:none;width: 100%;padding-top: 2px;" class="icon placeholder-icon button-clear"  ui-sref="menu.nearestRestaurants" ><img src="img/delete.png"></button>
+                </div>
+            </div>
+        </form>
+</div>
+ 
+   
+   
+    
+    
+</ion-view>

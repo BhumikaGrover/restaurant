@@ -1,0 +1,80 @@
+<ion-view style="" id="page5"  hide-nav-bar="true">
+
+<ion-header-bar align-title="center" id="div1" class="footermy" style="">
+    <div class="buttons">
+        <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;" ng-click="reservepending()"></button>
+    
+    </div>
+    	<h1 class="title" style="color:#fff;">{{search}}</h1>
+   	<div class="buttons">
+            <!--button style="margin-right:10px;margin-top:3px;;" ng-click="pop()" class="button button-clear" ui-sref="menu.wallet"><i class="icon"><img width="20px" src="img/wallet-icon-5.png" alt="" /></i></button-->
+   		<button style="margin-right:20px;" class="button button-clear"  ui-sref="menu.search" ><i class="icon"><img width="12px" src="img/icon_arrow.png" alt="" /></i></button>
+        <button style="margin-right:5px; margin-top:3px;" class="button button-clear" ng-click="modal1.show()"><i class="icon"><img width="20px" src="img/icon_settings.png" alt="" /></i></button>
+        <!---button style="margin-top:3px;" class="button button-clear"><i class="icon"><img width="20px" src="img/icon_search.png" alt="" /></i></button--->
+ 	</div>
+    
+ </ion-header-bar>
+    <ion-content class="has-header" padding="false">
+        <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+        <div ng-if="Gps == 0">
+        <div class="restaurant_list restaurant_list11" ng-repeat="res_list in resname1 | orderBy: floc" ng-if="res_list.sponsored =='1'" >
+           <a  ng-click="jgd(res_list.id,res_list.distance)"  style="display:block;height:100%;">
+                <img style="display: block; margin-left: auto; margin-right: auto;height:100%;" src="{{res_list.logo}}" height="auto" width="100%">
+                <div class="restaurant_destination">
+<!--                	<h5><i class=""><img src="img/location.png"></i> {{res_list.distance | number:1}}<br /> KM</h5>-->
+<h1>{{res_list.name}}</h1>
+                        <h4 class="sponsored_tag"> Featured </h4>
+                </div>
+                <div class="restaurant_con">
+                	<h1>{{res_list.name}}</h1>
+                        
+                        <!--h1>{{res_list.review_avg}}</h1-->
+                    <h5>{{res_list.address}}</h5>
+<!--                    <div  ng-repeat="n in [1,2,3,4,5]" style="float:left;">  
+                        
+            <i class="ion-ios-star user_ratting" ng-class="res_list.review_avg >= n ? 'active':''"></i>
+            </div>-->
+                    <div class="rest_type"><span ng-repeat="kk in res_list.typename">{{kk.RestaurantsType.name | uppercase }}</span> </div>
+                </div>
+            </a>
+        </div>
+         
+<!--        --------------------------->
+         <div class="restaurant_list restaurant_list11" ng-repeat="res_list in resname1 | orderBy: floc"  ng-if="res_list.sponsored =='0'">
+            <a  ng-click="jgd(res_list.id,res_list.distance)"  style="display:block;height:100%;">
+                <img style="display: block; margin-left: auto; margin-right: auto;height:100%;" src="{{res_list.logo}}" height="auto" width="100%">
+                <div class="restaurant_destination">
+                	<h5><i class=""><img src="img/location.png"></i> {{res_list.distance | number:1}}<br /> KM</h5>
+                </div>
+                <div class="restaurant_con">
+                	<h1>{{res_list.name}}</h1>
+                         
+                        <!--h1>{{res_list.review_avg}}</h1-->
+                    <h5>{{res_list.address}}</h5>
+                    <div class="rest_type"><span ng-repeat="kk in res_list.typename">{{kk.RestaurantsType.name | uppercase}}</span></div>
+                </div>
+            </a>
+        </div>
+        
+        </div>
+        
+        <div ng-if="Gps == 1">
+            <div class="spacer" style="height:35vh; width: 100%;float: left;"></div>
+        <div class="main_box11">
+            <h4>Offline</h4>
+            <p>No Network Available On Your GPS</p>
+            <button ng-click="location_gps()">Reload</button>
+            <img src="img/error.png">
+        </div>
+        </div>
+        
+        <div class="spacer" style="height:3vh;float: left;width: 100%;"></div>
+        
+    </ion-content>
+     <!--button class="button button-light button-fab button-fab-bottom-right" id="fab" ui-sref="menu.map">
+            <i class="icon"><img style="margin-top:10px;" width="18px" src="img/geo_icon.png"></i-->
+        
+</ion-view>

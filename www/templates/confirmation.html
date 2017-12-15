@@ -1,0 +1,39 @@
+<ion-view style="" class=" " id="page4" title="Confirmation" hide-nav-bar="true">
+
+<ion-header-bar align-title="center" id="div1" class="bar-dark" style="background: none;">
+<!--  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>-->
+  
+  
+</ion-header-bar>
+
+
+<ion-content padding="false" scroll style="background:#f2f2f2; top: 0;" class="">
+    
+    <div class="thanku">
+        <i class="ion-ios-checkmark-outline"></i>
+        <h1 class="fadeInDown animated">Thank You !</h1>
+        <h4 class="fadeInDown animated" >Your Payment is Complete </h4>
+    </div>
+    
+    
+    <div class="box_thanku zoomIn animated">
+                <p>Order Id: {{order.id}}</p>
+                <h4>Total: KD {{order.total | number:3}}</h4>
+        </div>
+<!--     <div class="box_thanku zoomIn animated">
+                <p>Order Id: {{table.id}}</p>
+                <h4>Total: KD {{table.total}}</h4>
+        </div>-->
+    <div class="thankulogo">
+        <img width="80px" src="img/logo2.png">
+    </div>
+    </ion-content>
+    
+<ion-footer-bar align-title="left" class="bar-light" style="background:#f2f2f2; height: 51px; padding-top: 14px;
+">
+        <div class="goback"><a class="zoomIn animated" ng-click="remove()">Back to home</a></div>
+</ion-footer-bar>
+    
+</ion-view>

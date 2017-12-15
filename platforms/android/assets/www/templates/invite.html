@@ -1,0 +1,23 @@
+<ion-view style="" class=" " id="page4" title="Invite User">
+   <ion-nav-buttons side="left">
+      <button class="button button-clear button-positive white_txt" ui-sref="menu.profile">Cancel</button>
+</ion-nav-buttons>
+<div class="bar bar-subheader">
+  <input class="invite_search"  ng-model="username" ng-keyup="search_invite(username)" type="text"  placeholder="@UrbanHalal" style="padding-right:20px;">
+</div>
+    <ion-content class="has-header has-subheader">
+     
+<div class="list">
+
+    <div class="item item-avatar contactlist" ng-repeat="allcontact in contacts">
+      <img ng-if="allcontact.photos==null" src="img/no_user_image.svg"/>
+      <img ng-if="allcontact.photos != null" src="{{allcontact.photos[0].value}}"/>
+      <h2>{{allcontact.name.formatted}}</h2>
+      <button class="button button-small button-outline button-balanced btn_invite" ng-click="sendinvite(allcontact.name.formatted, allcontact.emails[0].value, allcontact.phoneNumbers[0].value)">Invite</button>
+    </div>
+
+
+</div>
+
+    </ion-content>
+</ion-view>

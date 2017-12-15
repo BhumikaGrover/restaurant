@@ -1,0 +1,77 @@
+<ion-side-menus style="" enable-menu-with-back-views="false" ng-controller="menuCtrl">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu21">
+        <ion-content padding="false" class="side-menu-left">
+           
+        <div class="profile_user" style="background:url(img/n3.jpg) no-repeat; background-size:cover;">
+            <a menu-close ui-sref="menu.profile">
+			<div class="pro_pic">
+                             
+            	<img src="{{profilepic}}">
+            </div>
+            <div class="profile_list" href="#" style="height:150px; background:none;">
+              <h2>{{User_data.name | uppercase}}</h2>
+<!--              <p>Wallet Amount:</p>-->
+             
+            </div>
+            <button class="button-clear sett_btn"><img src="img/settings.png"></button>
+            </a>
+            
+            </div>
+        
+        
+        
+        
+        
+        
+            <ion-list id="menu-list1">
+            <div class="padding tableres" ng-hide="dispay_none == 0">
+                
+            	<h6  ng-if="D_status.dl_status == 0">Reservation<span class="pending">Pending</span></h6>
+                <h6 ng-if="D_status.dl_status == 1">Reservation<span class="pending" >Confirmed</span></h6>
+                <h6 ng-if="D_status.dl_status == 2">Reservation<span class="pending" >Cancelled</span></h6>
+                <h6 ng-if="D_status.dl_status == 3">Reservation<span class="pending" >Delivered</span></h6>
+                <h4>{{rst_name}}</h4>
+                <span><i class="ion-ios-calendar-outline"></i> {{rst_day}} {{rst_Time}}</span>
+                <span><i class="ion-ios-calendar-person"></i> {{rst_People}} People</span>
+                </div>
+                <!--button style="margin-right:10px;margin-top:3px;;" ng-click="pop()" class="button button-clear" ui-sref="menu.wallet"><i class="icon"><img width="20px" src="img/wallet-icon-5.png" alt="" /></i></button-->
+                
+                <ion-item style="border:none; padding-left: 44px !important;" menu-close=""   ng-click="menuu()" id="menu-list-item1" class="item-icon-left slide_nav"><a class="item-content" style="padding-left: 0 !important;">Dine
+                    <i class="icon_new"><img width="9px" src="img/dine.png"></i></a>
+                </ion-item>
+                <ion-item style="border:none;" menu-close="" ui-sref="menu.wallet"   id="menu-list-item3" class="item-icon-left slide_nav">Wallet  <span style="position: absolute;
+right: 17px; top: 16px; font-weight: 800;">  KD {{loyalty_points1 | number:3}}</span>
+                    <i class="icon_new"><img width="12px" src="img/wallet-icon-5.png"></i>
+                </ion-item>
+              
+                <ion-item style="border:none; padding-left: 44px !important;font-size: 12px;" menu-close=""  ng-click="favourite()" ng-controller="favoritesCtrl" id="menu-list-item3" class="item-icon-left slide_nav">Favorites
+                    <i class="icon_new fa fa-heart" style="color: #00505e;"></i>
+                </ion-item>
+                <ion-item style="border:none; padding-left: 44px !important;font-size: 12px;" menu-close=""  ng-click="reserve_his()" ng-controller="reservationhistoryCtrl" id="menu-list-item1" class="item-icon-left slide_nav">Reservation History
+                    <i class="icon_new fa fa-calendar-check-o" style="color: #00505e;"></i>
+                </ion-item>
+                <ion-item style="border:none; padding-left: 44px !important;font-size: 12px;" menu-close="" id="menu-list-item9" class="item-icon-left slide_nav"  ng-click="history()" ng-controller="orderhistoryCtrl">History
+                    <i class="icon_new fa fa-history" style="color: #00505e;"></i></ion-item>
+                    
+                      <ion-item style="border:none; padding-left: 0px !important; font-size:12px;"  menu-close="" id="menu-list-item9" class="item-icon-left slide_nav" ui-sref="menu.contact">Contact us
+                    <i style="font-size:15px; color: #00505e;" class="icon_new fa fa-lock"></i></ion-item>
+                     
+                     
+                     <ion-item style="border:none; padding-left: 44px !important; font-size:12px;"  menu-close="" id="menu-list-item9" class="item-icon-left slide_nav" ng-click="logout()">Logout
+                    <i style="font-size:15px; color: #00505e;" class="icon_new ion-log-out"></i></ion-item>
+                   
+                    
+                
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

@@ -1,0 +1,162 @@
+<ion-view title="Tandoori (Clay Oven)" id="" hide-nav-bar="true">
+<ion-header-bar align-title="center" id="div1" class="bar-light map_header">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 class="title heading_2"></h1>
+  <div class="buttons">
+  	<button class="button button-clear button-positive white_txt ion-bag" style="color:#fff;"  ng-click="display(numbitemsd)">
+        <span id='itemNum' class="cart_itm" ng-if="!numbitemsd">0</span> 
+        <span id='itemNum' class="cart_itm" ng-if="numbitemsd != ''">{{numbitemsd}} {{item}}</span></button>
+  </div>
+</ion-header-bar>
+
+    <ion-content style="background:#fff; top:0;" class="has-header" padding="false">
+         <div class="list card">
+        <div class="item item-body">
+            <div class="boxed_images">
+          <img src="{{poodetails.image}}">
+            </div>
+          <h2>{{poodetails.name}}</h2>
+          <h4>KD {{poodetails.price}}</h4>
+<!--          <input type="text" ng-model="totalprice" >-->
+          
+        </div>
+      </div>
+        <div class="asso_pro" ng-repeat="(asso_items, indexmain) in actualdata" ng-click="addClass()">
+    
+    <div class="heading_asso"><h3>{{ indexmain[0].DishCategory.name}}</h3></div>
+    
+    <div class="asso_box" ng-repeat="asso22 in indexmain">
+        
+          <span class="chk_box" ng-if="asso22.optiontype=='chkbox'"><label class="{{data.chck[asso22.Product.id]}}"><input type="checkbox" ng-model="data.chck[asso22.Product.id]" ng-change="updateprice(asso22.Product.id,asso22.Product.price,data.chck[asso22.Product.id])" /> <img src="{{asso22.Product.image}}" alt="4" class="grey"> </label> </span>
+          <span class="radio_btn"  ng-if="asso22.optiontype=='radiobtn'"><label  ng-class="(data.radio[asso_items] == '{{asso22.Product.id}}' ? 'class-if-selected' : 'class-ifnot-selected')"> <input type="radio" ng-model="data.radio[asso_items]" value="{{asso22.Product.id}}" ng-change="updateradioprice(asso22.DishSubcat.id,asso22.Product.price)" />
+   
+  
+  <img src="{{asso22.Product.image}}">
+  
+    </label> </span>                    
+         <input type="hidden" ng-model="data.parent_id" >
+        <center>
+            
+            <h2>{{asso22.Product.name}}</h2>
+          <h4>KD {{asso22.Product.price}}</h4>
+        </center>
+        
+    </div>
+      <div ng-repeat="asso22 in asso_items">
+ 
+    
+      </div></div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+<!--    <div class="list" style="margin-bottom:0;">
+        
+    <div class="item padding_0">
+      <div class="img_boxed">
+      	<img src="{{poodetails.image}}">
+        <div class="bootom_txed">
+        
+        <div class="row">
+        	<div class="col">
+        	<h2>{{poodetails.name}}</h2>
+            </div>
+            <div class="col">
+                <h2 style="margin:0; float:right; font-weight:700; color:#fff">KD {{poodetails.price}}</h2>
+            </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>-->
+ </ion-content>
+         <div class="bar bar-footer" style="background: #ff0000;">          
+        <button class="button button-clear  button-block icon-centre ion-bag" ng-click="formdata()" style="color: #fff; margin: 0;"> ADD TO CART</button>
+        </div>
+        
+        
+        
+    <!--div class="padding">
+    
+    	<div class="commentssec">
+        	<h4>Comments (324)</h4>
+            
+            <div class="list">
+
+    <a class="item comment_list item-avatar" href="#">
+      <img src="img/user1.jpg">
+      <div class="com_list">
+      	<span class="post_time"><i class="ion-ios-timer-outline"></i>3h</span>
+          <h2>Venkman</h2>
+          <p>Easily create Windows 8 Metro UI-style websites with this templating framework.</p>
+      </div>
+    </a>
+
+    <a class="item comment_list item-avatar" href="#">
+      <img src="img/user1.jpg">
+      <div class="com_list">
+      	<span class="post_time"><i class="ion-ios-timer-outline"></i>3h</span>
+          <h2>Venkman</h2>
+          <p>Easily create Windows 8 Metro UI-style websites with this templating framework.</p>
+      </div>
+    </a>
+    <a class="item comment_list item-avatar" href="#">
+      <img src="img/user1.jpg">
+      <div class="com_list">
+      	<span class="post_time"><i class="ion-ios-timer-outline"></i>3h</span>
+          <h2>Venkman</h2>
+          <p>Easily create Windows 8 Metro UI-style websites with this templating framework.</p>
+      </div>
+    </a>
+    <a class="item comment_list item-avatar" href="#">
+      <img src="img/user1.jpg">
+      <div class="com_list">
+      	<span class="post_time"><i class="ion-ios-timer-outline"></i>3h</span>
+          <h2>Venkman</h2>
+          <p>Easily create Windows 8 Metro UI-style websites with this templating framework.</p>
+      </div>
+    </a>
+
+</div>
+        </div>
+    
+    </div-->
+    
+    
+    
+
+<!--        
+      <div class="list card">
+        <div class="item item-body">
+          <img class="full-image" src="img/pic2.jpg">
+          <p>items name</p>
+          <p>
+            <a href="#" class="subdued">1 Like</a>
+            <a href="#" class="subdued">5 Comments</a>
+          </p>
+        </div>
+      </div>-->
+        
+ 
+      
+      
+   
+    
+    <!--div class="bar bar-footer comm_input" style="background:#f2f2f2; border-top:1px solid #ddd;">
+  <button class="button button-clear icon ion-ios-camera" style="padding: 0px 6px 0px 0px; border-radius: 0px;"></button>
+  <label class="item-input-wrapper">
+      <input type="text" placeholder="Your message...">
+    </label>
+  <button class="button button-assertive" style="border-radius:0px;"> SEND</button>
+</div-->
+    
+    
+</ion-view>

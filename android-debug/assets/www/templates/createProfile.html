@@ -1,0 +1,47 @@
+<ion-view style="" id="page2" title="Create Profile">
+    <ion-content class="has-header" padding="true">
+        <div style="width: 283px; height: 50px;" class="spacer"></div>
+        <div>
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/logos.svg" height="auto" width="118px">
+        </div>
+        <form name="CreateProfile"  ng-submit="CreateProfile.$valid && profile()" novalidate>
+        <div style="width: 283px; height: 35px;" class="spacer"></div>
+       
+            <label id="createProfile-input2" class="item-input input_border">
+                <input placeholder="Name" type="text" name="name" ng-model="data.name" required>
+            </label>
+            <div ng-show="CreateProfile.$submitted || CreateProfile.name.$touched">
+            <div ng-show="CreateProfile.name.$error.required" class="assertive">Field Required</div>
+        </div>
+            <label id="createProfile-input3" class="item-input input_border">
+                <input placeholder="Phone Number" type="number" name="phone" ng-model="data.phone" ng-pattern="/^[1-9]*$/" ng-maxlength="10" required>
+            </label>
+             <div ng-show="CreateProfile.$submitted || CreateProfile.phone.$touched">
+             <div ng-show="CreateProfile.phone.$error.required" class="assertive">Field required</div>
+             <div ng-show="CreateProfile.phone.$error.pattern" class="assertive">Please Filled numeric</div>
+             <div ng-show="CreateProfile.phone.$error.maxlength" class="assertive">Number is not valid</div>
+             </div>
+        
+            <label id="createProfile-input4" class="item-input input_border">
+                <input placeholder="Email Address" type="email" name="email" ng-model="data.email" required>
+            </label>
+          <div ng-show="CreateProfile.$submitted || CreateProfile.email.$touched">
+        <div ng-show="CreateProfile.email.$error.required" class="assertive">Field required</div>
+        </div>
+        <span ng-show="!CreateProfile.email.$error.required && CreateProfile.email.$error.email && CreateProfile.email.$dirty" class="assertive">Invalid Email Address</span>
+            <label id="createProfile-input5" class="item-input input_border">
+                <input placeholder="***********" type="password" name="password" ng-model="data.password" ng-minlength="5" ng-maxlength="10" required>
+            </label>
+        <div ng-show="CreateProfile.$submitted || CreateProfile.password.$touched">
+        <div ng-show="CreateProfile.password.$error.required" class="assertive">Field required</div>
+        <div ng-show="CreateProfile.password.$error.minlength" class="assertive"> Password is week </div>
+        </div>
+        
+        <div class="custom_padding">
+            <button type="submit" class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px;" id="createProfile-button2" >SIGN UP</button>
+        </div>
+       </form>
+        Already have An Account? <button class="button button-dark button_txt button-block button-clear" id="createProfile-button3" ui-sref="menu.step1"><span>Sign In</span></button>
+     
+    </ion-content>
+</ion-view>

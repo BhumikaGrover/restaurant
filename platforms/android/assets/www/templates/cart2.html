@@ -1,0 +1,199 @@
+<ion-view style="" class=" " id="page4" title="Cart" hide-nav-bar="true">
+      <ion-header-bar align-title="center" id="div1" class="" style="background: rgba(0, 81, 105, 1);">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back" style="color:#fff;"></i></button>
+  </div>
+  <h1 class="title heading_2" style="color:#fff;">Cart</h1>
+<!--  <div class="buttons">
+  	<button class="button button-clear button-positive white_txt ion-bag" style="color:#fff;"  ng-click="display(numbitemsd)">
+        <span id='itemNum' class="cart_itm" ng-if="!numbitemsd">0</span> 
+        <span id='itemNum' class="cart_itm" ng-if="numbitemsd != ''">{{numbitemsd}} {{item}}</span></button>
+  </div>-->
+</ion-header-bar>
+
+
+<!--<ion-nav-buttons side="right">
+      <button class="button button-clear button-positive white_txt" style="color:#fff;">History</button>
+</ion-nav-buttons>-->
+
+ <ion-content class="has-header header_top" padding="true" style="background-size:cover; top:0;">
+        
+        <div class="list mycart">
+
+
+    
+         <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+             <div style="margin-top:10px;" class="item cart_item item-thumbnail-left item-icon-right wrapper" href="#" ng-repeat="cart in dine_cartitem">
+    
+    <ion-item class="item-remove-animate main">
+          <div class="img_cart">
+      <img src="{{cart.parent_product.image}}">
+      </div>
+        <div class="padding_lft">  
+        <h2>{{cart.parent_product.name}}</h2>
+<!--      <p>Lorem Ipsum  </p>
+      <p>Quantity</p>-->
+        </div>
+      <div class="priceqty">
+      <span class="price_cart">KD {{cart.parent_product.price}}</span><i class="eq">x</i><span class="addcart">{{cart.parent_product.quantity}}</span>
+        <div class="button-bar button-assertive add_itm mrg_rite">
+          <a class="button button-small button-assertive minusicon ion-ios-minus-empty mybtns1" ng-click="dec(cart.parent_product.id,cart.parent_product.quantity)"></a>
+          <a class="button button-small button-assertive ion-ios-plus-empty mybtns2" ng-click="inc({{cart.parent_product.id}})"></a>
+        </div>
+      </div>
+    
+          <ion-option-button class="button-assertive delete_option"
+                             ng-click ="removedine(cart.parent_product.id,cart.parent_product.product_id)" >
+              <i class="ion-close-round" > </i>
+          </ion-option-button> 
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+                 <div style="margin-top:10px;" class="item cart_item item-thumbnail-left item-icon-right wrapper itm_edt mycartitm" href="#" ng-repeat=" cart12 in cart.assoc_products">
+    <ion-item class="item-remove-animate main" >
+         
+        <div class="">  
+        <h2>{{cart12.name}}</h2>
+<!--      <p>Lorem Ipsum</p>
+      <p>Quantity</p>-->
+        </div>
+      <div class="">
+      <span class="price_cart">KD {{cart12.price}}</span><i class="eq">x</i><span class="addcart">{{cart12.quantity}}</span>
+        <div class="button-bar button-assertive add_itm mrg_rite">
+          <a class="button button-assertive minusicon ion-ios-minus-empty button-small btn_edt mybtns1" ng-click="dec(cart12.id,cart12.quantity)"></a>
+          <a class="button button-assertive ion-ios-plus-empty button-small btn_edt mybtns2" ng-click="inc(cart12.id,cart12.quantity)"></a>
+        </div>
+      </div>
+      
+          <ion-option-button class="button-assertive delete_options" ng-click ='removedine(cart12.id,cart12.product_id)' >
+              <i class="ion-close-round" > </i>
+          </ion-option-button> 
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+    </div>
+     
+    </div>
+             
+<!--         <div style="margin-top: 10px;padding: 12px !important; min-height: 66px !important;height: 43px !important;" class="item cart_item item-thumbnail-left item-icon-right wrapper" href="#" ng-repeat="cart in cartitem" ng-if="cart.Cart.associative_pro=='1'">
+    
+    <ion-item class="item-remove-animate main">
+          <div class="img_cart">
+      <img src="{{cart.Cart.image}}">
+      </div>
+        <div class="left00">  
+        <h2>{{cart.Cart.name}}</h2>
+        <span class="price_cart">KD {{cart.Cart.price}}</span><i class="eq">x</i><span class="addcart">{{cart.Cart.quantity}}</span>
+      <p>Lorem Ipsum</p>
+      <p>Quantity</p>
+        </div>
+      <div class="right00">
+      
+        <div class="button-bar button-assertive add_itm mrg_rite">
+          <a class="button button-small button-assertive minusicon ion-ios-minus-empty" ng-click="dec(cart.Cart.id,cart.Cart.quantity)"></a>
+          <a class="button button-small button-assertive ion-ios-plus-empty" ng-click="inc(cart.Cart.id)"></a>
+        </div>
+      </div>
+      
+          <ion-option-button style="height: 34px;padding: 20px !important;" class="button-assertive delete_option" ng-click ='remove_dish(cart.Cart.id,cart.Cart.product_id)' >
+              <i class="ion-close-round" > </i>
+          </ion-option-button> 
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+     
+    </div>-->
+        
+
+      </ion-list>   
+   
+     
+   
+
+</div>
+    
+    
+    
+        
+   
+      <div class="button-bar footermy  bar-positive" ng-if="total != 0">
+  <a class="button  button-clear mybtns1" style="border-right: 1px solid #024a56;">Surcharge</a>
+  <a class="button  button-clear mybtns2" style="border-left: 1px solid #024a56;"><b>KD {{surcharge}}</b></a>
+</div>
+    <div class="button-bar bar-positive footermy" style="border-left: 1px solid #024a56;" ng-if="total == 0">
+  <a class="button  button-clear" style="border-right: 1px solid #024a56;">Surcharge</a>
+  <a class="button  button-clear" style="border-left: 1px solid #024a56;"><b>KD 0</b></a>
+</div>
+    
+    </ion-content>
+ 
+   
+    
+     <div class="bar bar-footer footermy"   ng-if="total != 0">
+    <div class="button-bar button-clear  bar-positive">
+   <a class="button  button-clear" style="border-right:1px solid #07414b;" ng-click="nextdine()">Next</a>
+  <a class="button  button-clear"><b>KD {{totaldine | number:3}}</b></a>
+</div>
+</div>
+ <div class="bar bar-footer footermy"  ng-if="total == 0">
+    <div class="button-bar button-clear  bar-positive">
+  <a class="button  button-clear" style="border-right:1px solid #043377;" >Next</a>
+  <a class="button  button-clear"><b>KD 0.000</b></a>
+</div>
+</div>
+</ion-view>
+
+
+<style>
+    
+ion-option-button.button-assertive.delete_options.button {
+    min-width: auto;
+    min-height: 40px !important;
+    line-height: 45px !important;
+    padding: 0px 20px;
+    margin-right: 0;
+    float: right;
+    border-radius: 0px;
+}
+
+.itm_edt .item-content {
+  min-height: 40px;
+  background: #efefef;
+}
+
+.item.cart_item.item-thumbnail-left.item-icon-right.wrapper.itm_edt {
+    min-height: 50px;
+    box-shadow: none;
+    margin: 5px 0 !important;
+    padding: 0 !important;
+}
+
+.itm_edt h2 {
+    float: left;
+    padding-top: 9px;
+    padding-right: 5px;
+    padding-left: 6px;
+}
+.itm_edt .price_cart.ng-binding {
+    padding-top: 8px;
+    padding-left: 8px;
+}
+.itm_edt .eq {
+    padding: 7px;
+}
+
+.itm_edt .addcart {
+    float: left;
+    padding-top: 8px;
+}
+
+.button-small.btn_edt {
+    padding: 2px 4px 1px;
+    min-width: 28px;
+    min-height: 10px;
+    font-size: 12px;
+    line-height: 11px;
+}
+
+.itm_edt .mrg_rite {
+    margin-right: 8px;
+    margin-top: 6px;
+}
+</style>

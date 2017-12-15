@@ -1,0 +1,56 @@
+<ion-view style="" id="page3" title="Payment Informations" ng-controller="paymentInformationsCtrl" hide-nav-bar="true">
+<ion-header-bar align-title="center" id="div1" class="" style="background: rgba(0, 81, 105, 1);">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back" style="color:#fff;"></i></button>
+  </div>
+  <h1 class="title" style="color:#fff;">Payment</h1>
+  
+</ion-header-bar>
+ <ion-content class="has-header header_top" padding="true" style="background-size:cover; top:0;">
+       
+       <div class="payment_outer"><img width="30%" src="img/drop.png" /></div>
+       
+<div class="oi">
+        <div class="list card " style="background:none;">
+  <div class="item item-body" style="background:#ece8e8; border: 1px solid rgba(255,255,255,0.15);">
+        <ion-list style="">
+            <button  style="background-color: rgba(255, 255, 255, 0.6); border: medium none;  padding: 16px 49px 16px 16px; width: 100%; margin: 0; text-align: left; font-size: 16px;" class="crd_list " ng-model="choice" ng-click="credit()" ng-controller="creditCtrl"><i class="ion-card" style="padding-right:10px;"></i>Credit Card/KNET</button>
+<!--<ion-radio class="crd_list" ng-model="choice" ng-value="'A'"><i class="ion-card" style="padding-right:10px;"></i>Credit Card</ion-radio>-->
+   <!--   <ion-radio class="crd_list" ng-model="choice" ng-value="'B'"><i class="ion-android-phone-portrait" style="padding-right:10px;"></i>Net Banking</ion-radio> -->
+        
+           <!--  <ion-item style="" class="item-thumbnail-left bgnone">
+                <img src="img/ey1Nv29KQPifjHk2bfJT_apple.png">
+                <h2><span class="left">Apple Pay </span><i data-tags="mail, redo" data-pack="default" class="ion-forward for_right"></i></h2>
+            </ion-item> -->
+<!--            <div id="payment-button-bar1" class=" button-bar">
+              <button class="button button-assertive  button-block paypal_btn" id="buyNowBtn">Pay With Paypal</button>
+            </div>-->
+           <div id="payment-button-bar1" class=" button-bar"> 
+               <button style="background-color: rgba(255, 255, 255, 0.6); border: medium none;  padding:7px 15px; color:#000; margin-top: 10px !important; border-radius: 0; width: 100%; margin: 0; text-align: left; font-size: 16px;" class="button button-assertive  button-block paypal_btn"  ng-controller="walletpaymentCtrl" ng-click="paymentwalletCtrl()"><img style="width: 6%; position: relative; top: 4px;  left: 0;  right: 0; bottom: 0; margin-right: 8px;" src="img/wallet11.png">Pay With Wallet</button>
+            </div>
+
+
+           <!--  <div id="payment-button-bar1" class=" button-bar">
+              <button class="button button-positive  button-block" id="buyNowBtn" ng-controller="logoutCtrl" ng-click="Logout_function()">Logout</button>
+            </div>
+           -->
+            <!-- <ion-item style="" class="item-thumbnail-left bgnone" id="buyNowBtn">
+                <img src="img/xqJSm8X6RkOMtdpTl1GS_pp-logo-200px.png">
+                <h2><i data-tags="mail, redo" data-pack="default" ></i></h2>
+            </ion-item> -->
+           <!--  <ion-item style="" ui-sref="menu.cardDetails" class="item-thumbnail-left bgnone">
+                <img src="img/5kgU3LPjRbSiZAQXsA8x_creditc.png">
+                <h2><span class="left">Credit card</span><i data-tags="mail, redo" data-pack="default" class="ion-forward for_right"></i></h2>
+            </ion-item>
+             <ion-item style="" class="item-thumbnail-left bgnone">
+                <img src="img/XIkxslfoTDW2eGDmnM2i_android.png">
+                <h2><span class="left">Android Pay</span><i data-tags="mail, redo" data-pack="default" class="ion-forward for_right"></i></h2>
+            </ion-item> -->
+<!--            <ion-item style="" class="item-thumbnail-left bgnone">
+                 <button id="buyNowBtn"> Buy Now !</button>
+  <button id="buyInFutureBtn"> Pay in Future !</button>
+  <button id="profileSharingBtn"> Profile Sharing !</button>
+            </ion-item>-->
+        </ion-list>
+    </ion-content>
+</ion-view>

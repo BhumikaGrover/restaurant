@@ -1,0 +1,106 @@
+<ion-view id="page4" title="Cart" hide-nav-bar="true" ng-controller="checkout1Ctrl">
+
+<ion-header-bar align-title="center" id="div1" class="" style="background: rgba(0, 81, 105, 0.35);">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back" style="color:#fff;"></i></button>
+        <h1 class="title heading_2" style="color:#fff;"> Details</h1>
+  </div>
+  
+  
+</ion-header-bar>
+
+ <ion-content class="has-header" style="background:url(img/thankyou.jpg) no-repeat; background-size: cover; top: 0 ;" class="has-header header_top" padding="false">
+         
+    <form name="checkout1" ng-submit="checkout1.$valid && check1()" novalidate style="width:100%; float:left; margin-top: 48px;">
+        <div class="padding">
+        <!--<h4 style="color:#fff; text-align:center;">Your Details</h4>-->
+        <div class="list list-inset billing_add">
+  <label class="item item-input" style="color: #fff;">
+      <input style="color:#fff;" type="text" placeholder="First Name" ng-model="data.firstname" name="firstname" required>
+  </label>
+            <div ng-show="checkout1.$submitted || checkout1.firstname.$touched">
+            <div ng-show="checkout1.firstname.$error.required" class="assertive">Field Required</div>
+        </div>
+  <label class="item item-input" style="color: #fff;">
+    <input style="color:#fff;"  type="text" placeholder="Last Name" ng-model="data.lastname" name="lastname" required>
+  </label>
+            <div ng-show="checkout1.$submitted || checkout1.lastname.$touched">
+            <div ng-show="checkout1.lastname.$error.required" class="assertive">Field Required</div>
+        </div>
+             
+  <label class="item item-input" style="color: #fff;">
+      <input style="color:#fff;"  type="email" placeholder="Email Address" ng-model="data.email" name="email" required>
+  </label>
+            <div ng-show="checkout1.$submitted || checkout1.email.$touched">
+            <div ng-show="checkout1.email.$error.required" class="assertive">Field Required</div>
+            <div ng-show="checkout1.email.$error.email" class="assertive">Invalid Email Address</div>
+        </div>
+            
+            
+  <label class="item item-input" style="color: #fff;">
+    <input style="color:#fff;"  type="text" placeholder="Phone Number" ng-model="data.phone"  name="phone"  required>
+  </label>
+             <div ng-show="checkout1.$submitted || checkout1.phone.$touched">
+             <div ng-show="checkout1.phone.$error.required" class="assertive">Field required</div>
+             <div ng-show="checkout1.phone.$error.number" class="assertive">The telephone number is not valid</div>
+<!--             <div ng-show="checkout1.phone.$error.maxlength" class="assertive">The telephone number is not valid</div>
+             <div ng-show="checkout1.phone.$error.minlength" class="assertive">The telephone number is not valid</div>-->
+             </div>
+            
+        
+            <!--label class="item item-input">
+    <input style="color:#fff;"  type="text" placeholder="City" ng-model="data.city" name="city" required>
+  </label>
+            <div ng-show="checkout1.$submitted || checkout1.city.$touched">
+            <div ng-show="checkout1.city.$error.required" class="assertive">Field Required</div>
+        </div-->
+            
+            <!--label class="item item-input">
+    <input style="color:#fff;"  type="text" placeholder="State" ng-model="data.state" name="state" required>
+  </label>
+            <div ng-show="checkout1.$submitted || checkout1.state.$touched">
+            <div ng-show="checkout1.state.$error.required" class="assertive">Field Required</div>
+        </div-->
+                   
+   <!--label class="item item-input">
+    <input style="color:#fff;"  type="text" placeholder="Address" ng-model="data.add"  name="add" required>
+   </label>
+            <div ng-show="checkout1.$submitted || checkout1.add.$touched">
+            <div ng-show="checkout1.add.$error.required" class="assertive">Field Required</div>
+        </div>
+            
+   <!--label class="item item-input">
+    <input style="color:#fff;"  type="text" placeholder="Zip" ng-model="data.zip" ng-pattern="/^[0-9]*$/" name="zip" maxlength="6" required>
+   </label>
+            <div ng-show="checkout1.$submitted || checkout1.zip.$touched">
+             <div ng-show="checkout1.zip.$error.required" class="assertive">Field required</div>
+             <div ng-show="checkout1.zip.$error.pattern" class="assertive">zip is not valid</div>
+             <div ng-show="checkout1.zip.$error.maxlength" class="assertive">zip is not valid</div>
+             </div>
+            
+        </div-->
+
+
+    <div class="button-bar button-clear  bar-positive mypymnt" style="margin-top:10px;">
+  <input type="submit" class="button  button-clear" value="Payment">  
+    </div>
+          
+</div>
+    </form> 
+    
+    
+    <div class="cancelation_line">
+        <span>Order Cancellation Time: {{cancel_time_for_dine}} Minutes</span>
+    </div>
+    
+    <div class="sapcer" style="height:5vh;float: left;width: 100%;"></div>
+    
+    <label class="item item-input line44">
+   Disclaimer: Please be advised that neither “Drop in” nor the restaurant are held accountable if the user does not show up on time.
+  </label>
+<!--         <label class="item item-input">
+   Disclaimer: Please be advised that neither “Drop in” nor the restaurant are held accountable if the user does not show up on time.
+  </label>-->
+    </ion-content>
+
+</ion-view>

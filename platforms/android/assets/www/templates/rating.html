@@ -1,0 +1,115 @@
+<ion-view id="page4" title="Cart" hide-nav-bar="true">
+
+<ion-header-bar align-title="center" id="div1" class="bar-light map_header " style="background: rgba(0, 81, 105, 1) !important;">
+  <div class="buttons">
+    <button ui-sref="menu.orderhistory" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+      <h1 class="title">Reviews</h1>
+  
+  
+</ion-header-bar>
+    <form ng-submit= "postreviewrating()" ng-controller="ratingCtrl">
+<ion-pane>
+<ion-content padding="false" style="background-size:cover; top:0; padding-top:44px;" class="manual-remove-top-padding has-header">
+    
+    
+    
+       <!--div class="item item-avatar item-icon-right">
+        <img src="{{image}}">
+        <h2>{{name}}</h2>
+        <!-- <p>November 05, 1955</p> >
+      </div-->
+        
+   <div class="ratting_rev">
+       <fieldset style="padding: 10px;">
+	   
+         <div class="cus_rat"> 
+	
+         <span class="rating" style="text-align: left;">
+    
+	 <input type="radio" id="rating-5"  class="rating-input" ng-model="data.rating" value="5" /><label class="rating-star" for="rating-5"></label>
+      <input type="radio"  id="rating-4" class="rating-input" ng-model="data.rating" value="4" /><label class="rating-star" for="rating-4"></label>
+      <input type="radio"  id="rating-3" class="rating-input" ng-model="data.rating" value="3" /><label class="rating-star" for="rating-3"></label>
+      <input type="radio"  id="rating-2" class="rating-input" ng-model="data.rating" value="2" /><label class="rating-star" for="rating-2"></label>
+      <input type="radio" id="rating-1"  class="rating-input" ng-model="data.rating" value="1" /><label class="rating-star" for="rating-1"></label>
+    
+         </span>
+         </div>
+           <span style=" color: #999; font-weight: bold; font-size: 15px; float: right;">Food Quality</span>
+  </fieldset>   
+      </div>
+       <div class="ratting_rev">
+        <fieldset style="padding: 10px;">
+	   
+         <div class="cus_rat">
+		
+         <span class="rating" style="text-align: left;">
+	
+      <input type="radio" id="ratingp-5"  class="rating-input" ng-model="data.ratingp" value="5" /><label class="rating-star" for="ratingp-5"></label>
+      <input type="radio"  id="ratingp-4" class="rating-input" ng-model="data.ratingp" value="4" /><label class="rating-star" for="ratingp-4"></label>
+      <input type="radio"  id="ratingp-3" class="rating-input" ng-model="data.ratingp" value="3" /><label class="rating-star" for="ratingp-3"></label>
+      <input type="radio"  id="ratingp-2" class="rating-input" ng-model="data.ratingp" value="2" /><label class="rating-star" for="ratingp-2"></label>
+      <input type="radio" id="ratingp-1"  class="rating-input" ng-model="data.ratingp" value="1" /><label class="rating-star" for="ratingp-1"></label>
+    </span>
+         </div>
+           <span style=" color: #999; font-weight: bold; font-size: 15px; float: right;">Friendliness of staff</span>
+  </fieldset>   
+      </div> 
+	  <div class="ratting_rev">
+        <fieldset style="padding: 10px;">
+	   
+         <div class="cus_rat">
+		
+         <span class="rating" style="text-align: left;">
+
+             <input type="radio" id="ratingy-5"  class="rating-input" ng-model="data.ratingy" value="5" /><label class="rating-star" for="ratingy-5"></label>
+      <input type="radio"  id="ratingy-4" class="rating-input" ng-model="data.ratingy" value="4" /><label class="rating-star" for="ratingy-4"></label>
+      <input type="radio"  id="ratingy-3" class="rating-input" ng-model="data.ratingy" value="3" /><label class="rating-star" for="ratingy-3"></label>
+      <input type="radio"  id="ratingy-2" class="rating-input" ng-model="data.ratingy" value="2" /><label class="rating-star" for="ratingy-2"></label>
+      <input type="radio" id="ratingy-1"  class="rating-input" ng-model="data.ratingy" value="1" /><label class="rating-star" for="ratingy-1"></label>
+    </span>
+         </div>
+           <span style=" color: #999; font-weight: bold; font-size: 15px; float: right">Price</span>
+  </fieldset>   
+      </div>
+	  <div class="ratting_rev">
+	  <fieldset style="padding: 10px;">
+	    
+	   <div class="cus_rat">
+		
+         <span class="rating" style="text-align: left;">
+   
+	  <input type="radio" id="ratingc-5"  class="rating-input" ng-model="data.ratingc" value="5" /><label class="rating-star" for="ratingc-5"></label>
+      <input type="radio"  id="ratingc-4" class="rating-input" ng-model="data.ratingc" value="4" /><label class="rating-star" for="ratingc-4"></label>
+      <input type="radio"  id="ratingc-3" class="rating-input" ng-model="data.ratingc" value="3" /><label class="rating-star" for="ratingc-3"></label>
+      <input type="radio"  id="ratingc-2" class="rating-input" ng-model="data.ratingc" value="2" /><label class="rating-star" for="ratingc-2"></label>
+      <input type="radio" id="ratingc-1"  class="rating-input" ng-model="data.ratingc" value="1" /><label class="rating-star" for="ratingc-1"></label>
+    </span>
+         </div>
+              <span style=" color: #999; font-weight: bold; font-size: 15px; float: right">Punctuality</span>
+  </fieldset>   
+      </div>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+      <div class="padding">
+          <textarea type="text" class="textarea" cols="" rows="" placeholder="Write your reviews..." ng-model ="data.review" name="review"  ></textarea>
+          
+      </div>
+       
+      
+       
+    
+        
+    </ion-content>
+    <div class="bar bar-footer footermy">
+  <input type="submit" class="button button-block button-assertive" style="background:none; margin-top:0; margin-bottom:0; float:left;" value="Post"/>
+</div>
+</ion-pane>
+    </form>
+
+</ion-view>

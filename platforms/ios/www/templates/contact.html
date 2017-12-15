@@ -1,0 +1,95 @@
+<ion-view id="page7" title="Contact" hide-nav-bar="true" >
+<!--<ion-header-bar align-title="center" id="div1" class="bar-light map_header">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 class="title">{{rest_detail.name}}</h1>
+  <div class="buttons">
+    <button class="heart_icon" style="padding-top:5px;"><img src="img/heart-active.png" width="20px"></button>
+  </div>
+</ion-header-bar>-->
+
+
+<ion-header-bar align-title="center" id="div1" class="" style="background: rgba(0, 81, 105, 1);">
+     <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+    
+    </div>
+<!--    	<h1 class="title" style="line-height: 1; left: 94px !important; right: 116px !important;"><span class="top_title">{{formatted_address}}</span></h1>-->
+   	
+    	<h1 class="title" style="line-height: 1; left: 49px; right: 49px;">
+        	<img src="img/drop.png" style="max-width: 100%;line-height: 27px;height: 27px;margin: 11px 0;" /> 
+        </h1>
+
+ </ion-header-bar>    
+<ion-pane>
+    <form ng-submit="contact.$valid && contactus()" name="contact" novalidate="">
+        
+
+    <ion-content class="has-header" style=" background-size: cover; top: 0 ;" padding="true" on-scroll="scrollEvent()" delegate-handle="scrollHandle" >
+   
+<div class="spacer" style="width:100%; float:left; height:5vh;"> </div>
+<div class="list" style="border: none;float: left;width: 100%;">
+<!--    <label class="item item-input item-select" style=" border:none;padding: 2px;height: 35px; border-radius: 3px; background:  rgba(0, 0, 0, 0.19);">
+    <select style="background: transparent;color: #fff;font-size: 12px;border: none;padding: 0 8px;left: 0;">
+      <option>Blue</option>
+      <option selected>Green</option>
+      <option>Red</option>
+    </select>
+  </label>-->
+
+  <label class="item item-input item-stacked-label contact_label gap_less" style="border:none;">
+    <span class="input-label" style="color: #4c4c4c; font-size: 12px;">Name</span>
+    <input type="text" placeholder="Name" ng-model="data.custname" name="custname" required="" style="background: none;color: #4c4c4c;border-bottom: 1px solid rgba(117, 110, 110, 0.5);">
+  </label>
+<div ng-show="contact.$submitted || contact.custname.$touched">
+    <div ng-show="contact.custname.$error.required" class="help-inline" style="color: #4c4c4c;
+font-size: 12px;text-align: right;">Field Required</div>
+            </div>
+      <label class="item item-input item-stacked-label contact_label gap_less" style="border:none;">
+    <span class="input-label" style="color: #4c4c4c; font-size: 12px;">Email</span>
+    <input type="email" placeholder="Email" ng-model="data.custemail" name="custemail" required="" style="background: none;color: #4c4c4c;border-bottom: 1px solid rgba(117, 110, 110, 0.5);">
+  </label>
+<div ng-show="contact.$submitted || contact.custemail.$touched">
+            <div ng-show="contact.custemail.$error.required" class="help-inline" style="color: #4c4c4c;
+font-size: 12px;text-align: right;">Field Required</div>
+            </div>
+  <span ng-show="!contact.custemail.$error.required && contact.custemail.$error.email && contact.custemail.$dirty" class="help-inline" style="color: #4c4c4c;font-size: 12px;text-align: right;">Invalid Email Address</span>
+  <label class="item item-input item-stacked-label contact_label gap_less" style="border:none;">
+    <span class="input-label" style="color: #4c4c4c; font-size: 12px;">Message</span>
+    <textarea  name="text" placeholder="Message" class="ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="data.message"  required="" style="background: none;color: black;border-bottom: 1px solid rgba(117, 110, 110, 0.5);"> </textarea>
+  </label>
+ 
+
+</div>
+        
+      
+  
+    </ion-content>
+        <div class="bar bar-footer" style="padding:0px; border:none;">
+              <button class="button footermy  button-block" style="margin:0px; font-size: 16px;line-height: 40px; border-radius:0px 0px 0px 0px; border:none; color:#fff;" id="signup-button2" >SUBMIT</button>
+            
+        </div>
+    </form>
+        </ion-pane>
+</ion-view>
+
+<style>
+
+    .item-select:after {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -3px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    color: #fff;
+    content: "";
+    pointer-events: none;
+    z-index: 9999999;
+}    
+
+</style>

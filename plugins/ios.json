@@ -1,0 +1,61 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.paypal.cordova.mobilesdk": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova-plugin-admobpro": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova-plugin-camera": {
+            "CAMERA_USAGE_DESCRIPTION": " ",
+            "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova-plugin-geolocation": {
+            "GEOLOCATION_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova.plugins.diagnostic": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        }
+    },
+    "dependent_plugins": {
+        "card.io.cordova.mobilesdk": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.fwrkofc.Dropin"
+        }
+    }
+}

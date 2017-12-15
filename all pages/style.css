@@ -1,0 +1,39 @@
+/*===================================================*/
+/*===================================================*/
+/*===================================================*/
+
+/*============= Edit Profile ============*/
+
+.edit_pro {
+  font-size: 12px;
+  padding: 5px;
+}
+
+/*============= Notification ============*/
+
+.notification {
+    margin: 14px 0;
+}
+
+.notification h3 span {
+  color: #999;
+  float: right;
+  font-size: 11px;
+}
+
+/*============= Invite Friends ============*/
+.invitefriend {
+  padding-right: 150px;
+}
+.invitefriend h2 {
+    margin-top: 8px;
+}
+.invite_btn {
+  font-size: 11px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: absolute;
+  right: 15px;
+  text-transform: uppercase;
+  top: 19px;
+}

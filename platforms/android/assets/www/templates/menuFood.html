@@ -1,0 +1,263 @@
+<ion-view title="Tandoori (Clay Oven)" id="" hide-nav-bar="true">
+<ion-header-bar align-title="center" id="div1" class="" style="background: rgba(0, 81, 105, 1);">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back" style="color:#fff;"></i></button>
+  </div>
+  <h1 class="title heading_2" style="color:#fff;"> Cart </h1>
+  <div class="buttons">
+  	<button class="button button-clear button-positive white_txt ion-bag" style="color:#fff;"  ng-click="displaycart(numbitemsd)">
+        <span id='itemNum' class="cart_itm" ng-if="!numbitemsd">0</span> 
+        <span style="color: rgb(6, 211, 236);" id='itemNum' class="cart_itm" ng-if="numbitemsd != ''">{{numbitemsd}} {{item}}</span></button>
+  </div>
+</ion-header-bar>
+
+ <ion-content class="has-header has-footer header_top" padding="true" style="background-size:cover; top:0;">
+        
+        
+        
+         <div class="list card cartmynw">
+        <div class="item item-body" style="padding: 0px 0 14px 0;">
+            <div class="boxed_images">
+          <img src="{{poodetails.image}}">
+            </div>
+          <h2>{{poodetails.name}}</h2>
+          <h4>KD {{poodetails.price}}</h4>
+<!--          <input type="text" ng-model="totalprice" >-->
+          
+        </div>
+      </div>
+      
+                <div class="padding">
+               <h4 style="font-size:16px; color:#4c4c4c;"> Description</h4>
+              
+            <div style="margin-top:0px;color:#000000;" id="restaurantDetails-markdown3">
+                <p class="collaped_txt" style="margin:0;text-align:justify;">{{poodetails.description}}</p>
+            </div>
+       
+                                    
+           </div>
+        
+        
+        
+       <!-- <span class="addons"  ng-click="toggleGroup1(group1)"
+                    ng-class="isGroupShown1(group1)">Description</span>  
+        <div ng-show="isGroupShown1(group1)">{{poodetails.description}}</div>-->
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  
+<!--        <div class="asso_pro" ng-repeat="(asso_items, indexmain) in maindata" ng-click="addClass()">
+    
+    <div class="heading_asso"><h3>{{ indexmain.DishCategory.name}}</h3></div>-->
+ 
+    <!--div class="asso_box" ng-repeat="asso22 in indexmain.Product">
+	
+	
+        
+          <span class="chk_box"><label class="{{data.chck[asso22.id]}}"><input type="checkbox" ng-model="data.chck[asso22.id]" ng-change="updateprice(asso22.id,asso22.price,data.chck[asso22.id])" /> <img src="{{asso22.image}}" alt="4" class="grey"> </label> </span>
+  
+  
+                       
+         <input type="hidden" ng-model="data.parent_id" >
+        <center>
+            
+            <h2>{{asso22.name}}</h2>
+          <h4>KD {{asso22.price}}</h4>
+        </center>
+        
+    </div-->
+<!--       <div ng-repeat="assoc_product in assoc_products"> 
+           <span class="chk_box"><label><input type="checkbox" ng-model="data.chck[assoc_product.Product.id]" ng-change="updateprice(assoc_product.Product.id,assoc_product.Product.price,data.chck[assoc_product.Product.id])" /> <img src="{{assoc_product.Product.image}}" alt="4" class="grey"> </label> </span>
+  
+  
+                       
+         <input type="hidden" ng-model="data.parent_id" >
+        <center>
+            
+            <h2>{{assoc_product.Product.name}}</h2>
+          <h4>KD {{assoc_product.Product.price}}</h4>
+        </center>
+    
+      </div> 
+	  </div>-->
+<!--<ion-item class="listing1" ng-repeat="(asso_items, indexmain) in maindata">
+  <ion-label> <span><h2>sdgddfg</h2><h4>dfghghdryhf</h4></span></ion-label>
+  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+</ion-item>-->
+
+<!--<span class="addons" ng-hide="assoc_products == ''">Add-Ons</span>    
+<ion-item class="listing1" ng-repeat="assoc_product in assoc_products">
+    
+  <ion-label> <span><h2>{{assoc_product.name}}</h2><h4>{{assoc_product.price}}</h4></span></ion-label>
+  <ion-checkbox color="dark" ng-model="data.chck[assoc_product.id]" ng-change="updateprice(assoc_product.id,assoc_product.price,data.chck[assoc_product.id])"></ion-checkbox>
+  
+  </ion-item>
+  -->
+  
+  
+  
+  
+  <div class="padding mydesp">
+        	<div class="collapsed_list" ng-hide="assoc_products == ''"  ng-click="toggleGroup2(group2)"
+                    ng-class="{active: isGroupShown2(group2)}">
+        	
+            <a href="#" class=""><i class="" ng-class="isGroupShown2(group2)? 'ion-ios-arrow-up' : 'ion-ios-arrow-down' "></i> Add-Ons</a>
+ </div>
+        <div style="border:none;" id="restaurantDetails-list-item-container1" class="item item-body" class="item-accordion" ng-repeat="assoc_product in assoc_products" ng-hide="isGroupShown2(group2)">
+           
+                
+                
+    
+  <ion-label> <span><h2>{{assoc_product.name}}</h2><h4>{{assoc_product.price}}</h4></span></ion-label>
+  <ion-checkbox color="dark" ng-model="data.chck[assoc_product.id]" ng-change="updateprice(assoc_product.id,assoc_product.price,data.chck[assoc_product.id])"></ion-checkbox>
+  
+
+
+        </div>
+                                    
+          
+        </div>
+  
+  
+  
+  
+  
+
+    
+        
+        
+        
+        
+        
+        
+        
+        
+
+<!--    <div class="list" style="margin-bottom:0;">
+        
+    <div class="item padding_0">
+      <div class="img_boxed">
+      	<img src="{{poodetails.image}}">
+        <div class="bootom_txed">
+        
+        <div class="row">
+        	<div class="col">
+        	<h2>{{poodetails.name}}</h2>
+            </div>
+            <div class="col">
+                <h2 style="margin:0; float:right; font-weight:700; color:#fff">KD {{poodetails.price}}</h2>
+            </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>-->
+    <div class="spacer" style="width:100%; float:left; height:5vh;"> </div>
+ </ion-content>
+         <div class="bar bar-footer footermy">          
+        <button class="button button-clear  button-block icon-centre ion-bag" ng-click="formdata()" style="color: #fff; margin: 0;"> ADD TO CART</button>
+        </div>
+        
+        
+        
+    <!--div class="padding">
+    
+    	<div class="commentssec">
+        	<h4>Comments (324)</h4>
+            
+            <div class="list">
+
+    <a class="item comment_list item-avatar" href="#">
+      <img src="img/user1.jpg">
+      <div class="com_list">
+      	<span class="post_time"><i class="ion-ios-timer-outline"></i>3h</span>
+          <h2>Venkman</h2>
+          <p>Easily create Windows 8 Metro UI-style websites with this templating framework.</p>
+      </div>
+    </a>
+
+    <a class="item comment_list item-avatar" href="#">
+      <img src="img/user1.jpg">
+      <div class="com_list">
+      	<span class="post_time"><i class="ion-ios-timer-outline"></i>3h</span>
+          <h2>Venkman</h2>
+          <p>Easily create Windows 8 Metro UI-style websites with this templating framework.</p>
+      </div>
+    </a>
+    <a class="item comment_list item-avatar" href="#">
+      <img src="img/user1.jpg">
+      <div class="com_list">
+      	<span class="post_time"><i class="ion-ios-timer-outline"></i>3h</span>
+          <h2>Venkman</h2>
+          <p>Easily create Windows 8 Metro UI-style websites with this templating framework.</p>
+      </div>
+    </a>
+    <a class="item comment_list item-avatar" href="#">
+      <img src="img/user1.jpg">
+      <div class="com_list">
+      	<span class="post_time"><i class="ion-ios-timer-outline"></i>3h</span>
+          <h2>Venkman</h2>
+          <p>Easily create Windows 8 Metro UI-style websites with this templating framework.</p>
+      </div>
+    </a>
+
+</div>
+        </div>
+    
+    </div-->
+    
+    
+    
+
+<!--        
+      <div class="list card">
+        <div class="item item-body">
+          <img class="full-image" src="img/pic2.jpg">
+          <p>items name</p>
+          <p>
+            <a href="#" class="subdued">1 Like</a>
+            <a href="#" class="subdued">5 Comments</a>
+          </p>
+        </div>
+      </div>-->
+        
+ 
+      
+      
+   
+    
+    <!--div class="bar bar-footer comm_input" style="background:#f2f2f2; border-top:1px solid #ddd;">
+  <button class="button button-clear icon ion-ios-camera" style="padding: 0px 6px 0px 0px; border-radius: 0px;"></button>
+  <label class="item-input-wrapper">
+      <input type="text" placeholder="Your message...">
+    </label>
+  <button class="button button-assertive" style="border-radius:0px;"> SEND</button>
+</div-->
+    
+    
+</ion-view>
+
+<style>
+ .checkbox input:checked::before, .checkbox input:checked + .checkbox-icon::before {
+    background: #c50606 !important;
+border-color: #a80909 !important;
+
+}
+.checkbox-icon::after {
+	left: 15%;
+}
+.scroll.padding{
+	margin-top: 0;
+}
+    </style>

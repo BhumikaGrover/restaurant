@@ -1,0 +1,80 @@
+<ion-view style="" id="page3" title="My Profile"  hide-nav-bar="true">
+
+<ion-header-bar align-title="center" id="div1" class="" style="background: rgba(0, 81, 105, 1);">
+     <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+    
+    </div>
+<!--    	<h1 class="title" style="line-height: 1; left: 94px !important; right: 116px !important;"><span class="top_title">{{formatted_address}}</span></h1>-->
+   	
+    	<h1 class="title" style=" left: 49px; right: 49px; color:#fff;">
+        	My Profile
+        </h1>
+
+ </ion-header-bar>
+    <ion-content class="has-header" padding="true">
+    
+    	<div class="profile">
+        	<div class="user_propic">
+                    <div class="user_img"> <div class="pic_outer"><img src="{{profilepic}}" alt="" /> </div>
+            
+            <h5>{{User_data.name | uppercase}}
+<!--                <a href="#"><i class="ion-compose"></i></a>-->
+            </h5>
+<!--            <p>Account valid until 12.12.2016</p>-->
+  <p> {{User_data.email}}</p>          
+<p>Phone numbers {{User_data.phone}}</p>
+<!--            <p>Jumeirah Beach Residence</p>-->
+        </div>
+            </div></div>
+    
+    
+        <div style="width: 283px; height: 83px;" class="spacer"></div>
+        
+        <div style="margin-bottom: 0;" class="list pro_list" ui-sref="menu.editinfo">
+
+  <!--a class="item" href="#">
+    <i class="pro_icon fa fa-percent"></i>
+    View all savings
+    <i class="pro_iconr ion-ios-arrow-right"></i>
+  </a-->
+  <a class="item" href="#" style="border-bottom: none;">
+    <i class="pro_icon fa fa-user" >
+   Edit Info
+    <i class="pro_iconr ion-ios-arrow-right" ></i></i>
+  </a>
+  <!--a class="item" href="#">
+    <i class="pro_icon fa fa-money"></i>
+    Payment
+    <i class="pro_iconr ion-ios-arrow-right"></i>
+  </a-->
+
+  <!--a class="item" href="#">
+    <i class="pro_icon fa fa-info-circle"></i>
+    Notification
+    <i class="pro_iconr ion-ios-arrow-right"></i>
+  </>
+
+  <!--a class="item" href="#">
+    <i class="pro_icon fa fa fa-users" ui-sref="menu.invite"></i>
+    Invite Friends
+    <i class="pro_iconr ion-ios-arrow-right"></i>
+  </a-->
+
+</div>
+         <div style="width: 283px; height: 83px;" class="spacer"></div>
+        
+         <div class="list pro_list" style="margin-top: 0;" ui-sref="menu.changepassword">
+<a class="item" href="#">
+    <i class="pro_icon fa fa-user" >
+   Change Password
+    <i class="pro_iconr ion-ios-arrow-right" ></i></i>
+  </a>
+  
+
+</div>
+
+        
+        
+    </ion-content>
+</ion-view>

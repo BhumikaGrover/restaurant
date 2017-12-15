@@ -1,0 +1,37 @@
+<ion-view style="" id="page3" title="Step1">
+    <ion-content class="has-header" padding="true">
+        <div style="width: 283px; height: 83px;" class="spacer"></div>
+        <div style="color:#000000;text-align:center;" id="step1-markdown1">
+            <p>Please provide us your mobile <br />number</p>
+        </div>
+        <div style="width: 283px; height: 40px;" class="spacer"></div>
+        <form name="step1" class="list" id="step1-form2" ng-submit="mobile()" novalidate>
+            <label id="step1-input6" class="item-input input_border">
+                <input placeholder="Email Address" type="email" name="email" ng-model="data.email" required>
+            </label>
+            <div ng-show="step1.$submitted || step1.email.$touched">
+     <div ng-show="step1.email.$error.required" class="assertive">Field required</div>
+        </div>
+     <span ng-show="!step1.email.$error.required && step1.email.$error.email && step1.email.$dirty" class="assertive">Invalid Email Address</span>
+             <label id="step1-input6" class="item-input input_border">
+                <input placeholder="***********" type="password" name="password" ng-model="data.password" ng-minlength="5" ng-maxlength="10" required>
+            </label>
+          <div ng-show="step1.$submitted || step1.password.$touched">
+        <div ng-show="step1.password.$error.required" class="assertive">Field required</div>
+        <div ng-show="step1.password.$error.minlength" class="assertive"> Password is week </div>
+        </div>
+        	<label id="step1-input6" class="item-input input_border" style="width:20%; text-align:center; float:left; border-right:1px solid #ddd;">
+            	<input placeholder="+1" type="text" style="width:50px;border-right:none; padding-right: 0px; font-size: 20px; text-align:center;">
+            </label>
+            <label id="step1-input6" class="item-input input_border" style="width:80%; float:left; padding-left:20px; font-size: 14px; ">
+                <input placeholder="Mobile Number" type="number" style="font-size: 14px; ">
+            </label>
+        
+        <div style="width: 283px; height: 27px;" class="spacer"></div>
+        <div class="custom_padding">
+            <button type="submit "class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px;" id="step1-button4">NEXT</button>
+        </div>
+        </form>
+        <button class="button button-dark button_txt button-block button-clear" id="step1-button5">Already have An Account? <span>Sign In</span></button>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,43 @@
+<ion-view style="" class=" " id="page4" title="Order History Details">
+<ion-content padding="false" style="background:#f2f2f2;" class="manual-ios-statusbar-padding">
+   
+    <div class="top_orderhis_details">
+		<div class="row">
+        	<div class="col">
+            <div class="history_box">
+            	<b>Order On</b>
+                {{orderdea_his.Order.created}}
+            </div>
+            </div>
+            <div class="col">
+            	<div class="history_box" style="border:none;">
+            	<b>Grand Total</b>
+               KD {{orderdea_his.Order.total}}
+            </div>
+            </div>
+        </div>
+	</div>
+<!--    <div class="padding">
+    <h4>Updates sent to</h4>
+    <p class="update_p"><i class="ion-ios-telephone-outline"></i> 0145227568</p>
+    <p class="update_p"><i class="ion-ios-email-outline"></i> abc@gmail.com</p>
+    
+     </div>-->
+    <div class="list">
+    <div class="item  item-thumbnail-left list_padding" href="#">
+      <img src="{{orderdea_his.Restaurant.logo}}">
+      <h2>{{orderdea_his.Restaurant.name}}</h2>
+       <h2>{{orderdea_his.Restaurant.city}}</h2>
+<!--      <p class="delivered">Delivered</p>
+      <p>Delivered on Sun, may 4th</p>-->
+    </div>
+    <div class="padding"><h1 class="headding_title"> Order Items</h1></div>
+    <div class="item  list_padding" href="#" ng-repeat="order_det in orderdea_his.OrderItem">
+      <h2>{{order_det.name}}</h2>
+      <p style="white-space:normal;">{{order_det.subtotal}}</p>
+      <span class="qtty">{{order_det.quantity}}</span>
+    </div>
+    </div>
+  
+    </ion-content>
+</ion-view>

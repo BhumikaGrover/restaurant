@@ -1,0 +1,53 @@
+<ion-view style="" id="page2" title="Edit Info" ng-controller="editinfoCtrl" hide-nav-bar="true">
+
+
+<ion-header-bar align-title="center" id="div2" class="bar-light map_header" style="background: rgba(0, 81, 105, 1) !important;">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 class="title">Edit Info</h1>
+  
+</ion-header-bar>
+    <ion-content class="has-header" padding="true">
+    
+    	<div class="profile">
+        	<div class="user_propic">
+                    <a ></a>
+                    <div class="user_img" >   <div class="pic_outer"><i  ng-click="picture()"class="fa fa-pencil-square-o" aria-hidden="true"></i> <img  src="{{profilepic}}" alt="" /> </div> </div>
+            </div>
+            
+        </div>
+<!--   <h5>
+       <button ng-click="takePicture()"><i class="ion-compose" ></i><span class="edit_pro"  >Edit Profile Pic</span></button></h5>
+    <h5><button ng-click="getPicture()"><i class="ion-compose" ></i><span class="edit_pro"  >gallery</span></button></h5>-->
+        <div style="width: 283px;height: 94px;margin-bottom: 20px;" class="spacer"></div>
+        
+        <div class="list">
+            <form class=" " name="profile"  ng-submit="profile.$valid && save_profile(data.id)" novalidate>
+  <label class="item item-input">
+    <input type="text" placeholder="{{data.pro_name}}" ng-model="data.pro_name" name="pro_name">
+  </label>
+            <div ng-show="profile.$submitted || profile.name.$touched">
+            <div ng-show="profile.name.$error.required" class="assertive">Field Required</div>
+            </div>
+                
+
+  <label class="item item-input">
+    <input type="text" placeholder="Phone Number" ng-model="data.pro_phone" >
+  </label>
+                <div ng-show="profile.$submitted || profile.phone.$touched">
+             <div ng-show="profile.phone.$error.required" class="assertive">Field required</div>
+<!--             <div ng-show="profile.phone.$error.pattern" class="assertive">The telephone number is not valid</div>-->
+<!--             <div ng-show="CreateProfile.phone.$error.maxlength" class="assertive">The telephone number is not valid</div>-->
+             </div>
+           
+
+        <button type="submit" class="button button_purpel  button-block" style="border-radius:0;" ng-click="showConfirm()">SAVE</button>
+
+   </form>
+</div>
+
+        
+        
+    </ion-content>
+</ion-view>

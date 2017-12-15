@@ -1,0 +1,170 @@
+<ion-view title="Tandoori (Clay Oven)" id="" hide-nav-bar="true">
+<ion-header-bar align-title="center" id="div1" class="" style="background: rgba(0, 81, 105, 1);">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back" style="color:#fff;"></i></button>
+  </div>
+  <h1 class="title heading_2" style="color:#fff;"> Cart</h1>
+  <div class="buttons">
+  	<button class="button button-clear button-positive white_txt ion-bag" style="color:#fff;" ng-click="displaydine(numbitemsd)">
+            <span id='itemNum' class="cart_itm" ng-if="!numbitemsd">0</span> 
+        <span style="color: rgb(6, 211, 236);" id='itemNum' class="cart_itm" ng-if="numbitemsd != ''">{{numbitemsd}} {{item}} </span>
+        </button>
+  </div>
+</ion-header-bar>
+
+    
+ <ion-content class="has-header has-footer header_top" padding="true" style="background-size:cover; top:0;">
+        
+
+<!--        <div class="list card">
+        <div class="item item-body">
+            <div class="boxed_images">
+          <img src="{{pdetails.image}}">
+            </div>
+          <h2>{{pdetails.name}}</h2>
+          <h4>KD {{pdetails.price}}</h4>
+
+        </div>
+      </div>-->
+      
+      
+      
+             <div class="list card cartmynw">
+        <div class="item item-body" style="padding: 0px 0 14px 0;">
+            <div class="boxed_images">
+           <img src="{{pdetails.image}}">
+            </div>
+          <h2>{{pdetails.name}}</h2>
+          <h4>KD {{pdetails.price}}</h4>
+<!--          <input type="text" ng-model="totalprice" >-->
+          
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+        <!-- <span class="addons"  ng-click="toggleGroup1(group1)"
+                    ng-class="isGroupShown1(group1)">Description</span>  
+        <div ng-show="isGroupShown1(group1)">{{pdetails.description}}</div>-->
+        
+        
+        
+        
+        
+        
+        
+              <div class="padding">
+               <h4 style="font-size:16px; color:#4c4c4c;"> Description</h4>
+              
+            <div style="margin-top:0px;color:#000000;" id="restaurantDetails-markdown3">
+                <p class="collaped_txt" style="margin:0;text-align:justify;">{{pdetails.description}}</p>
+            </div>
+       
+                                    
+           </div>
+     
+        	
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+<!-------------------------->
+
+<!--<div class="asso_pro" ng-repeat="(asso_items, indexmain) in maindata" ng-click="addClass()">
+    
+    <div class="heading_asso"><h3>{{ indexmain.DishCategory.name}}</h3></div>
+    
+    <div class="asso_box" ng-repeat="asso22 in indexmain.Product">
+        
+          <span class="chk_box"><label class="{{data.chck[asso22.id]}}"><input type="checkbox" ng-model="data.chck[asso22.id]" ng-change="updateprice(asso22.id,asso22.price,data.chck[asso22.id])" /> <img src="{{asso22.image}}" alt="4" class="grey"> </label> </span>
+    </label> </span>                    
+         <input type="hidden" ng-model="data.parent_id" >
+        <center>
+            
+            <h2>{{asso22.name}}</h2>
+          <h4>KD {{asso22.price}}</h4>
+        </center>
+        
+    </div>
+      
+	  </div>-->
+<!--  <div ng-repeat="(asso_items, indexmain) in maindata" ng-click="addClass()">
+        <ion-item class="listing1" ng-repeat="asso22 in indexmain.Product" >
+  <ion-label> <span><h2>{{asso22.name}}</h2><h4>{{asso22.price}}</h4></span></ion-label>
+  <ion-checkbox color="dark" checked="true" ng-model="data.chck[asso22.id]" ng-change="updateprice(asso22.id,asso22.price,data.chck[asso22.id])"></ion-checkbox>
+</ion-item>
+        </div>
+<span class="addons" ng-hide="dine_ass == ''">Add-Ons</span> 
+      <ion-item class="listing1" ng-repeat="assoc_product in dine_ass">
+    
+  <ion-label> <span><h2>{{assoc_product.name}}</h2><h4>{{assoc_product.price}}</h4></span></ion-label>
+  <ion-checkbox color="dark" ng-model="data.chck[assoc_product.id]" ng-change="updateprice(assoc_product.id,assoc_product.price,data.chck[assoc_product.id])"></ion-checkbox>
+</ion-item>
+      -->
+      
+      <div class="padding mydesp">
+        	<div class="collapsed_list" ng-hide="dine_ass == ''" ng-click="toggleGroup2(group2)"
+                    ng-class="{active: isGroupShown2(group2)}">
+        	
+            <a href="#" class=""><i class="" ng-class="isGroupShown2(group2)? 'ion-ios-arrow-up' : 'ion-ios-arrow-down' "></i> Add-Ons</a>
+</div>
+        <div style="border:none;" id="restaurantDetails-list-item-container1" class="item item-body" class="item-accordion"  ng-repeat="assoc_product in dine_ass" ng-hide="isGroupShown2(group2)">
+           
+                
+                
+    
+   <ion-label> <span><h2>{{assoc_product.name}}</h2><h4>{{assoc_product.price}}</h4></span></ion-label>
+  <ion-checkbox color="dark" ng-model="data.chck[assoc_product.id]" ng-change="updateprice(assoc_product.id,assoc_product.price,data.chck[assoc_product.id])"></ion-checkbox>
+  
+
+
+        </div>
+                                    
+           
+        </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ion-content>
+    <div class="bar bar-footer footermy">     
+        <button class="button button-clear  button-block icon-centre ion-bag" ng-click="formdata()" style="color: #fff; margin: 0;"> ADD TO CART</button>
+        </div>
+        
+        
+        
+        
+        
+    </ion-view>
+<style>
+ .checkbox input:checked::before, .checkbox input:checked + .checkbox-icon::before {
+    background: #c50606 !important;
+border-color: #a80909 !important;
+
+}
+.checkbox-icon::after {
+	left: 15%;
+}
+.scroll.padding{
+	margin-top: 0;
+}
+    </style>
+    

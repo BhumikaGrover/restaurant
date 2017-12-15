@@ -1,0 +1,109 @@
+<ion-view style="" id="page5" title="Nearest Restaurants"  hide-nav-bar="true">
+
+<ion-header-bar align-title="center" id="div1" class="footermy" style="">
+  <div class="buttons">
+    <button ui-sref="menu.nearestRestaurants" class="button back-button buttons  button-clear header-item"><i class="icon ion-android-arrow-back" style="color:#fff;"></i></button>
+  </div>
+  <h1 class="title" style="color:#fff;">History</h1>
+  <div class="buttons">
+  	<!--<button style="" class="button button-clear icon ion-share"></button>
+    <button style="color:#662483;" class="button button-clear icon ion-ios-heart"></button>-->
+  </div>
+</ion-header-bar>
+    <ion-content class="has-header" padding="false" style="top:44px;" on-scroll="scrollEvent()" delegate-handle="scrollHandle">
+          <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+      
+        <div class="restaurant_list" ng-repeat=" vars in orders" >
+            <div ng-if = "vars.Order.dl_status == '0'">
+                <div class="restaurant_list restaurant_list11" >
+                    <div ng-click="orderhistorydetail(vars.Order.id)" ng-controller="orderHistorydetailsCtrl"  style="display:block;height:100%;">
+                <img style="display: block; margin-left: auto; margin-right: auto;height:100%;" src="{{vars.Restaurant.logo}}" height="auto" width="100%">
+                </div>
+                <div class="restaurant_con" ng-repeat="var in vars.OrderItem">
+                  <div class="heading_txt">{{vars.Restaurant.name}}</div>
+                  
+                   <h6>Order Id: {{vars.Order.id}}</h6>
+                    <span style="font-size:11px; margin-top:5px;">{{var.created}}</span>
+               
+                <button class="rem" ng-show="var.timediff <= vars.Restaurant.cancel_time" ng-click="cancelorder(vars.Order.id)">Cancel</button>
+                   <button class="rem" ng-show="var.timediff > vars.Restaurant.cancel_time" ng-click="redirect(vars.Restaurant.id)">Review</button>
+                    </div>
+                    
+                    
+                    
+                </div>
+     
+           
+         
+        </div>
+                <div  ng-if="vars.Order.dl_status==2">
+                    
+                    <div class="restaurant_list restaurant_list11" >
+                        <h4 style="color: #fff; font-size: 12px;width: 100% !important;padding: 8px !important;
+position: absolute;text-align: center;background: rgba(197, 2, 2, 0.7);">Your order has been cancelled</h4>
+                    <div ng-click="orderhistorydetail(vars.Order.id)" ng-controller="orderHistorydetailsCtrl"  style="display:block;height: 100%;">
+                <img style="display: block; margin-left: auto; margin-right: auto;height:100%" src="{{vars.Restaurant.logo}}" height="auto" width="100%">
+                </div>
+                <div class="restaurant_con" ng-repeat="var in vars.OrderItem">
+                  <div class="heading_txt">{{vars.Restaurant.name}}</div>
+                  
+                   <h6>Order Id: {{vars.Order.id}}</h6>
+                    <span style="font-size:11px; margin-top:5px;">{{var.created}}</span>
+               
+<!--                <button class="rem" ng-show="var.timediff <= vars.Restaurant.cancel_time" ng-click="cancelorder(vars.Order.id)">Cancel</button>
+                   <button class="rem" ng-show="var.timediff > vars.Restaurant.cancel_time" ng-click="redirect(vars.Restaurant.id)">Review</button>-->
+                    </div>
+                    
+                    
+                    
+                </div>
+                    <!--<div class="preorder">
+              <span>PREORDER FOR LATER</span>
+          </div>-->
+                </div> 
+        </div>
+        <ion-infinite-scroll ng-if="!noMoreItemsAvailable" 
+immediate-check="false" on-infinite="loadMore()"
+distance="50%">
+</ion-infinite-scroll>
+        <!--div class="restaurant_list" ng-repeat="vars in orderdetails">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/r2.jpg" height="auto" width="100%">
+                <div class="restaurant_con" ng-repeat="var in vars.OrderItem">
+                	<div class="heading_txt">You saved <b>401 AED</b></div>
+                    <h6>In restaurant Eauzone</h6>
+                    <span style="font-size:11px;">{{vars.Order.order_type}}</span>
+                    <span style="font-size:11px;">{{var.created}}</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="restaurant_list">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/r3.jpg" height="auto" width="100%">
+                <div class="restaurant_con">
+                	<div class="heading_txt">You saved <b>401 AED</b></div>
+                    <h6>In restaurant Eauzone</h6>
+                    <span style="font-size:11px;">21.07.2016</span>
+                </div>
+            </a>
+        </div>
+        
+        
+        <div class="restaurant_list">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/r4.jpg" height="auto" width="100%">
+                <div class="restaurant_con">
+                	<div class="heading_txt">You saved <b>401 AED</b></div>
+                    <h6>In restaurant Eauzone</h6>
+                    <span style="font-size:11px;">21.07.2016</span>
+                </div>
+            </a>
+        </div-->
+       
+        
+    </ion-content>
+</ion-view>

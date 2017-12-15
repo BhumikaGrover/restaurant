@@ -1,0 +1,198 @@
+<ion-view style="" id="page8" title="Reservation" hide-nav-bar="true">
+<ion-header-bar align-title="center" id="div2" class="footermy">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 class="title" style="color:#fff;">Reservation</h1>
+  
+</ion-header-bar>
+    <ion-content class="has-header" padding="false">
+    
+    	<div class="top_slider" style="height: 180px;">
+            <ion-slide-box css="mypager" on-slide-changed="slideHasChanged($index)">
+              <ion-slide ui-sref="menu.galler">
+                <div class="box blue" style="height: 100%;">
+                    <a ><img ng-src="{{reservationdetail.logo}}" alt="photo" style="height: 100%;" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                    <h1 style="font-size:26px;">{{reservationdetail.name}}</h1>
+                    <h1 style="font-size:26px;">{{reservationdetail.city}}</h1>
+                    </div>
+                </div>
+              </ion-slide>
+            </ion-slide-box>
+              
+
+
+        </div>
+    
+        
+        <div class="calender_time">
+        	<div class="row">
+            	<div class="col-50">
+                <div class="row">
+                <div class="col-25"><!--<button class="button button-clear ion-ios-arrow-back arrow_btn"  ng-click="timedecrease(timeIndex)" ng-disabled="timeDecreaseFlag == 1"></button>--></div>
+                <div class="col-50">
+                	<div class="time">
+                    	<h4 style="font-size: 14px;">DATE</h4>
+                        <select name="date" ng-model="data.date" ng-change="kj(data.date,cardIndex)" >
+                            <option value="">Select Date</option>
+                            <option ng-repeat="(key, value) in card2" value="{{value}}" >{{value | date:'dd-MM'}}</option>
+                         </select>
+                         
+<!--                        <h2 style="font-size: 15px; margin-top: 18px !important;" ng-value="{{timecard}}">{{timecard}}</h2>-->
+                    </div>
+                </div>
+                <div class="col-25"><!--<button class="button button-clear ion-ios-arrow-forward arrow_btn" ng-click="timeincrease(timeIndex)" ng-disabled="timeFlag == 1"></button>--></div>
+                    </div>
+                </div>
+                <div class="col-50" style="text-align: center;">
+                
+                    <div class="row" >
+                <div class="col-25"><!--<button class="button button-clear ion-ios-arrow-back arrow_btn" ng-click="decrease(card2,cardIndex)" ng-disabled="decrement_flag == 1"></button>--></div>
+                <div class="col-50">
+                    <div class="day">
+                    	<h4 style="font-size: 14px;">TIME</h4>
+                       <!-- <p ng-bind="date | date:'MM/dd/yyyy'"></p>-->
+<!--                        <h4  style="    font-size: 15px;
+    margin-top: 18px !important;" ng-bind="card2 | date:'dd-MM'"></h4>-->
+                        <select name="time" ng-model="data.time" ng-change="timedine(data.time)">
+               <option value="">Select time</option>
+                   <option ng-repeat="name in time" value="{{name}}">{{name}}</option>
+               </select> 
+                    </div>
+                </div>
+
+                <div class="col-25"><!--<button class="button button-clear ion-ios-arrow-forward arrow_btn" ng-click="increase(card2,cardIndex)" ng-disabled="flag == 1"></button>--></div>
+                 
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+        <div class="col-25"><button class="button button-clear ion-ios-arrow-back arrow_btn" ng-click="decreaseperson()"></button></div>
+                    
+            	<div class="col-50">
+                	<div class="people">
+                    	<h4 style="font-size:14px;">DINNER FOR</h4>
+                        <h2 style="font-size: 22px;
+    margin-top: 16px;">{{person}}</h2>
+                    </div>
+                </div>
+                <div class="col-25"><button style="float:right;" class="button button-clear ion-ios-arrow-forward arrow_btn" ng-click="increaseperson()"></button></div>
+                    
+                
+            </div>
+            
+            <div class="row">
+            <div class="col">
+        <a ng-click="dineorder(data.requestdine)" style="border-radius:0px 0px 0px 0px;" class="button button_purpel  button-block mybtnclss">SEND REQUEST</a>
+        
+        </div>
+        
+        </div>
+        
+        <ion-list id="restaurantDetails-list2">
+            <ion-item style="white-space:normal; border:none; font-size:10px;" id="restaurantDetails-list-item4" class="item-icon-left">
+                <i class="icon"><img width="25px" src="img/Asset 1pin.jpg" alt="" /></i>{{reservationdetail.address}}</ion-item>
+        </ion-list>
+        
+        <!--div class="map_diraction">
+        <a href="#" style="color:#000;">
+            <img src="img/map.jpg" alt="" />
+            <div class="restaurant_destination">
+            
+                    
+            <h5 style="color:#000;"><i class=""><img src="img/detect.png"></i> {{dis}} <br /> METERS</h5>
+                    <span style="float:right; font-size:12px; font-family: 'montserratregular'; ">SHOW DIRECTIONS</span>
+                   
+                </div>
+                 </a>
+        </div-->
+        
+        
+        
+        
+        
+        
+        
+        <!--div class="padding">
+            <div class="collapsed_list" ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+            <a href="#" class=""><i class="ion-ios-arrow-up" ng-class="isGroupShown(group) "></i> INFO</a>
+        
+        <div style="border:none;" id="restaurantDetails-list-item-container1" class="item item-body" class="item-accordion"                  
+                    ng-show="isGroupShown(group)">
+            <div style="margin-top:0px;color:#000000;" id="restaurantDetails-markdown3">
+                <p class="collaped_txt" style="margin:0;">{{description}}
+</p>
+                    
+                    <div class="cuisin" >
+                    <div class="row">
+                        <div class="col">
+                        <p>CUISINE:</p>
+                        <h4>American</h4>
+                        </div>
+                        
+                        <div class="col">
+                        <P>PRICE:</P>
+                        <h4>$$$<span>$$</span></h4>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+            </div>
+        </div>
+        <!--bvc>
+        <style>
+            .card-hide {
+    left: -100px !important;
+    opacity: 0 !important;
+}
+        </style>
+     <div class="col-md-2-4" 
+    ng-class="{'card-hide': index  > $index + 1}"
+    ng-repeat="card in day" 
+    ng-style="{left: 2 * $index + 'px', top: 2 * $index + 'px', 'z-index': (day.length - $index)}">
+
+    <ul class="list-unstyled cs-tag-item-grp">
+        <li class="clearfix" >
+            <div class="pull-left">
+                {{card}}
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="keys">
+  <button type="button" class="btn btn-next" ng-click="index = index < day.length ? index + 1 : day.length">Next</button>
+  <button type="button" class="btn btn-pre" ng-click="index = index > 1 ? index - 1 : 1">Previous</button>
+</div>
+
+
+<!--bvc-->
+        <ion-list id="restaurantDetails-list5">
+<!--            <ion-item style="" id="restaurantDetails-list-item7" class="item-icon-right list_viewmenu">
+                <i style="color:#0F75BC;" class="icon fa fa-link" ui-sref="menu.mainMenu2({restid:rest_detail.id})"></i>VIEW MENU</ion-item>-->
+            <ion-item style="" id="restaurantDetails-list-item8" class="item-icon-right list_viewmenu" ng-click="webres()">
+                <i style="color:#00505e;" class="icon fa fa-link"></i>RESTAURANT WEBSITE</ion-item>
+        </ion-list>
+        
+        
+        <form >
+<div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Special Request</span>
+    <textarea placeholder="Type Here" ng-model="data.requestdine"></textarea>
+  </label>
+</div>
+</form>
+        
+        
+        
+        
+    </ion-content>
+<!-- <div class="bar bar-footer bar-light">
+  <a class="button" style="border-radius:0px 0px 0px 0px; width:100%; background:#662483; color:#fff;" id="restaurantDetails-button8" ui-sref="menu.reservation">RESERVE</a>
+</div> -->
+</ion-view>

@@ -1,0 +1,51 @@
+
+     <ion-modal-view>
+         <form ng-submit="closeModal()"ng-submit="closeModal()" >
+     <div class="bar bar-header item-input-inset" style="background:none; border:none;">
+  <label class="item-input-wrapper" style="background:none; border-bottom:1px solid #ddd; border-radius:0;">
+       <button type="submit" class="icon placeholder-icon" ng-submit="closeModal()"><img src="img/search_loc.png" ></button>
+ 
+  </label>
+         <input type="text" placeholder="Search" name="address" ng-model="data.address">
+         <!--button class="icon placeholder-icon close_icon" ng-click = "closeModal()"><img style="margin-top:10px;" src="img/delete.png"></button-->
+
+</div>
+         </form>
+    
+     
+      
+   
+    <ion-content class="has-header" padding="true" style="background:#fefefe;">
+      <div class="padding">
+      
+      <div class="list">
+      <div class="list_outer">
+      <a ng class="deduct_location"><button class="ion-ios-paperplane-outline" ng-click="openModal()"></button></a>
+		 DETECT MY LOCATION
+      <!--a class="search_item" href="#">
+        Dubai Dubai Marina
+      </a>
+      <a class="search_item" href="#">
+        Dubai Dubai Mall
+      </a>
+      <a class="search_item" href="#">
+        Dubai food festival
+      </a>
+      <a class="search_item" href="#">
+        Dubai Media City Dubai
+      </a>
+      <a class="search_item" href="#">
+        Internet City Dubailand
+      </a>
+      <a class="search_item" href="#">
+        Dubai Dubai Sports City
+      </a>
+      <a class="search_item" href="#">
+        Dubai Investment Park
+      </a-->
+      </div>
+
+</div>
+</div>
+    </ion-content>
+  </ion-modal-view>

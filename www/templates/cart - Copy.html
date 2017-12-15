@@ -1,0 +1,75 @@
+<ion-view style="" class=" " id="page4" title="Cart" hide-nav-bar="true">
+     <ion-header-bar align-title="center" id="div1" class="bar-light map_header">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 class="title heading_2">Cart</h1>
+<!--  <div class="buttons">
+  	<button class="button button-clear button-positive white_txt ion-bag" style="color:#fff;"  ng-click="display(numbitemsd)">
+        <span id='itemNum' class="cart_itm" ng-if="!numbitemsd">0</span> 
+        <span id='itemNum' class="cart_itm" ng-if="numbitemsd != ''">{{numbitemsd}} {{item}}</span></button>
+  </div>-->
+</ion-header-bar>
+
+
+<!--<ion-nav-buttons side="right">
+      <button class="button button-clear button-positive white_txt" style="color:#fff;">History</button>
+</ion-nav-buttons>-->
+
+
+<ion-content padding="false" style="background:#eeeef3; padding-top:0;" class="manual-ios-statusbar-padding has-footer">
+        
+        <div class="list">
+
+    
+         <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+<div style="margin-top:10px;" class="item cart_item item-thumbnail-left item-icon-right wrapper" href="#" ng-repeat="cart in cartitem">
+    
+    <ion-item class="item-remove-animate main">
+          <div class="img_cart">
+      <img src="{{cart.Cart.image}}">
+      </div>
+        <div class="padding_lft">  
+        <h2>{{cart.Cart.name}}</h2>
+<!--      <p>Lorem Ipsum</p>
+      <p>Quantity</p>-->
+        </div>
+      <div class="priceqty">
+      <span class="price_cart">KD {{cart.Cart.price}}</span><i class="eq">x</i><span class="addcart">{{cart.Cart.quantity}}</span>
+        <div class="button-bar button-assertive add_itm mrg_rite">
+          <a class="button button-small button-assertive minusicon ion-ios-minus-empty" ng-click="dec({{cart.Cart.id}})"></a>
+          <a class="button button-small button-assertive ion-ios-plus-empty" ng-click="inc({{cart.Cart.id}})"></a>
+        </div>
+      </div>
+      
+          <ion-option-button class="button-assertive delete_option" ng-click ='remove_dish(cart.Cart.id,cart.Cart.product_id)")' >
+              <i class="ion-close-round" > </i>
+          </ion-option-button> 
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+     
+    </div>
+        
+
+      </ion-list>   
+   
+     
+    
+
+</div>
+      <div class="button-bar button-clear  bar-positive" style="background:#ef473a;">
+ <a class="button  button-clear"  >Surcharge</a>
+  <a class="button  button-clear"><b>KD {{surchargepickup}}</b></a>
+</div>
+        
+        
+    </ion-content>
+    
+    
+    <div class="bar bar-footer" style="background:#ef473a;">
+    <div class="button-bar button-clear  bar-positive">
+  <a class="button  button-clear" style="border-right:1px solid #aa0200;" ng-click="nextpickup()">Next</a>
+  <a class="button  button-clear"><b>KD {{total | number:3}}</b></a>
+</div>
+</div>
+</ion-view>

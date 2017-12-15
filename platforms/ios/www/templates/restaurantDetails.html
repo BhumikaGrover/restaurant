@@ -1,0 +1,326 @@
+<ion-view style="" id="page7" title="Restaurant Details" hide-nav-bar="true">
+<ion-header-bar align-title="center" id="div1" class="footermy">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 class="title" style="color:#fff;">{{rest_detail.name}}</h1>
+
+  <div class="buttons">
+       
+<a  ng-if="rest_detail.favrest==1" class="button button-small button-clear icon" style="float:right;color:red; left:inherit !important; top: 0; right: 0;" ng-class="rest_detail.favrest? 'ion-ios-heart heart':'ion-ios-heart-outline heart'"ng-model="like" ng-click="likeit(rest_detail.id)" ></a>
+<a ng-if="rest_detail.favrest==0" class="button button-small button-clear icon" style="float:right;color:#fff  !important; left:inherit !important;  top: 0; right: 0;" ng-class="rest_detail.favrest? 'ion-ios-heart heart':'ion-ios-heart-outline heart'" ng-model="like" ng-click="likeit(rest_detail.id)"></a>
+  </div>
+    <!--button class="heart_icon" style="padding-top:5px;"><img src="img/heart-active.png" width="20px"></button-->
+
+</ion-header-bar>
+    <ion-content class="has-header" padding="false" on-scroll="scrollEvent()" delegate-handle="scrollHandle">
+    
+    	<div class="top_slider" style="height: 180px;">
+        	<ion-slide-box css="mypager" on-slide-changed="slideHasChanged($index)">
+              <ion-slide ng-click="gallery()" ng-controller="galleryCtrl">
+                <div class="box blue"  style="height: 100%;">
+                	<a ><img src="{{rest_detail.logo}}" alt=""  style="height: 100%;" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                	<h1 style="font-size:26px;">{{rest_detail.name}}</h1>
+                    <h1 style="font-size:26px;">{{rest_detail.city}}</h1>
+                    </div>
+                </div>
+              </ion-slide>
+              <!--ion-slide ng-click="loadImages()" ng-controller="galleryCtrl">
+                <div class="box yellow">
+                	<a href="#"><img src="img/n2.jpg" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                	<h1 style="font-size:48px;">Eauzone</h1>
+                    <h1 style="font-size:48px;">Dubai</h1>
+                    </div>
+                </div>
+              </ion-slide>
+              <ion-slide ui-sref="menu.gallery">
+                <div class="box pink">
+                	<a href="#"><img src="img/n3.jpg" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                	<h1 style="font-size:48px;">Eauzone</h1>
+                    <h1 style="font-size:48px;">Dubai</h1>
+                    </div>
+                </div>
+              </ion-slide>
+              <ion-slide ui-sref="menu.gallery">
+                <div class="box pink">
+                	<a href="#"><img src="img/n1.jpg" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                	<h1 style="font-size:48px;">Eauzone</h1>
+                    <h1 style="font-size:48px;">Dubai</h1>
+                    </div>
+                </div>
+              </ion-slide-->
+            </ion-slide-box>
+
+
+        </div>
+    
+        
+        <ion-list id="restaurantDetails-list2">
+            <ion-item style="white-space:normal; border:none; font-size:10px;" id="restaurantDetails-list-item4" class="item-icon-left">
+                <button class="icon button-clear" ui-sref="menu.map({lat:rest_detail.latitude,long:rest_detail.longitude,rest_name:rest_detail.name})"><img width="25px" src="img/Asset 1pin.jpg" alt="" /></button>{{rest_detail.address}}</ion-item>
+        </ion-list>
+        
+        <span class="bsy" ng-if="rest_detail.restaurant_busy_dinein == true">Restaurant is busy for Dine in</span>
+                <span class="bsy" ng-if="rest_detail.restaurant_busy_pickup == true">Restaurant is busy for Pick up</span>
+        <div class="row" >
+        <div class="col" ng-if="rest_detail.reservation == 1">
+            <div ><a class="button button_purpel  button-block mybtnclss" style="border-radius:0px 0px 0px 0px;" id="createProfile-button2"  ng-click="dine(rest_detail.id,id=0)">DINE IN</a></div>
+             <!-- <div ng-if="rest_detail.restaurant_busy_dinein == true"><a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px; color:#f00;font-size:9px;" id="createProfile-button2">Restaurant is busy for DINEIN</a></div> -->
+        </div>
+            <div class="col"  ng-if="rest_detail.takeaway == 1">
+               <!--  <div ng-if="rest_detail.restaurant_busy_pickup == true"> <a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px;" id="createProfile-button2">Restaurant busy</a></div> -->
+                <div > <a class="button button_purpel  button-block mybtnclss" style="border-radius:0px 0px 0px 0px;" id="createProfile-button2"  ng-click="pick(rest_detail.id,id=1)">PICK UP</a></div>
+        </div>
+        </div>
+<!-- <div class="row" >
+        <div class="col">
+        	<a class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px; color:red;" id="createProfile-button2">Order can't be placed. Restaurant is busy now.</a>
+            </div>
+    
+        </div>-->
+        
+<!--        <div class="map_diraction">
+        <a href="#" style="color:#000;">
+        	<img src="img/map.jpg" alt="" />
+            <div class="restaurant_destination">
+            
+                	
+            <h5 style="color:#000;"><i class=""><img src="img/detect.png"></i> {{dis}}<br /> METERS</h5>
+                    <span style="float:right; font-size:12px; font-family: 'montserratregular'; ">SHOW DIRECTIONS</span>
+                   
+                </div>
+                 </a>
+        </div>-->
+        
+        
+        
+        
+        
+       
+     
+        
+        <div class="padding">
+        	<div class="collapsed_list" ng-click="toggleGroup1(group1)"
+                    ng-class="{active: isGroupShown1(group1)}">
+        	<a href="#" class=""><i class="" ng-class="isGroupShown1(group1)? 'ion-ios-arrow-up' : 'ion-ios-arrow-down' "></i> INFO</a>
+
+        <div style="border:none;" id="restaurantDetails-list-item-container1" class="item item-body" class="item-accordion"                  
+                    ng-show="isGroupShown1(group1)">
+        
+            <div style="margin-top:0px;color:#000000;" id="restaurantDetails-markdown3">
+                                
+                <p class="collaped_txt" style="margin:0;text-align:justify;">{{rest_detail.description}}</p>
+                    
+                    <div class="cuisin">
+                    <div class="row">
+                        <div class="col">
+                        <p>CUISINE:</p>
+                        <h4 ng-repeat="kk in rest_detail.typename">{{kk.RestaurantsType.name | uppercase}}</h4>
+                        </div>
+                    	
+                        <!--div class="col">
+                        <P>PRICE:</P>
+                        <h4>$$$<span>$$</span></h4>
+                        </div-->
+                    </div>
+                    </div> 
+                 
+
+            </div>
+        </div>
+                                    
+                 </div>
+        </div>
+
+        <ion-list id="restaurantDetails-list5">
+            <!--ion-item style="" id="restaurantDetails-list-item7" class="item-icon-right list_viewmenu">
+                <i style="color:#0F75BC;" class="icon fa fa-link" ui-sref="menu.mainMenu2({restid:rest_detail.id})"></i>VIEW MENU</ion-item-->
+            <ion-item style="" id="restaurantDetails-list-item8" class="item-icon-right list_viewmenu" ng-click="web()">
+                <i style="color:#0F75BC;" class="icon fa fa-link" ></i>RESTAURANT WEBSITE</ion-item>
+        </ion-list>
+        
+        <div class="padding">
+        	<div class="collapsed_list" ng-click="toggleGroup2(group2)"
+                    ng-class="{active: isGroupShown2(group2)}">
+        	<a href="#" class=""><i class="" ng-class="isGroupShown2(group2)? 'ion-ios-arrow-up' : 'ion-ios-arrow-down' "></i> OPENING HOURS</a>
+        
+        <div class="list" class="item-accordion"                  
+                    ng-show="isGroupShown2(group2)">
+        	<div class="row opning_hours">
+            	<div class="col">
+                <div class="dayleft">
+                	<h4>SUNDAY</h4>
+                </div>
+                </div>
+                <div class="col">
+                <div class="time_right" ng-if="rest_detail.Time.suncl == '0'">
+                	<h5>Opening Time: {{rest_detail.Time.sunopen}}</h5>
+                    <h5>Closing Time: {{rest_detail.Time.sunclose}}</h5>
+                </div>
+                    <div class="time_right" ng-if="rest_detail.Time.suncl == '1'">
+                	<h5>Closed</h5>
+                </div>
+                </div>
+            </div>
+            
+            
+            <div class="row opning_hours">
+            	<div class="col">
+                <div class="dayleft">
+                	<h4>Monday</h4>
+                </div>
+                </div>
+                <div class="col">
+                <div class="time_right" ng-if="rest_detail.Time.mcl == '0'">
+                	<h5>Opening Time: {{rest_detail.Time.mopen}}</h5>
+                    <h5>Closing Time: {{rest_detail.Time.mclose}}</h5>
+                </div>
+                    <div class="time_right" ng-if="rest_detail.Time.mcl == '1'">
+                	<h5>Closed</h5>
+                </div>
+                </div>
+            </div>
+            
+            <div class="row opning_hours">
+            	<div class="col">
+                <div class="dayleft">
+                	<h4>Tuesday</h4>
+                </div>
+                </div>
+                <div class="col">
+                <div class="time_right" ng-if="rest_detail.Time.tcl == '0'">
+                	<h5>Opening Time: {{rest_detail.Time.topen}}</h5>
+                    <h5>Closing Time: {{rest_detail.Time.tclose}}</h5>
+                </div>
+                    <div class="time_right" ng-if="rest_detail.Time.tcl == '1'">
+                	<h5>Closed</h5>
+                </div>
+                </div>
+            </div>
+            
+            <div class="row opning_hours">
+            	<div class="col">
+                <div class="dayleft">
+                	<h4>Wednesday</h4>
+                </div>
+                </div>
+                <div class="col">
+                <div class="time_right" ng-if="rest_detail.Time.wcl == '0'">
+                	<h5>Opening Time: {{rest_detail.Time.wopen}}</h5>
+                    <h5>Closing Time: {{rest_detail.Time.wclose}}</h5>
+                </div>
+                    <div class="time_right" ng-if="rest_detail.Time.wcl == '1'">
+                	<h5>Closed</h5>
+                </div>
+                </div>
+            </div>
+            
+            <div class="row opning_hours">
+            	<div class="col">
+                <div class="dayleft">
+                	<h4>Thursday</h4>
+                </div>
+                </div>
+                <div class="col">
+                <div class="time_right" ng-if="rest_detail.Time.thcl == '0'">
+                	<h5>Opening Time: {{rest_detail.Time.thopen}}</h5>
+                    <h5>Closing Time: {{rest_detail.Time.thclose}}</h5>
+                </div>
+                    <div class="time_right" ng-if="rest_detail.Time.thcl == '1'">
+                	<h5>Closed</h5>
+                </div>
+                </div>
+            </div>
+            
+            <div class="row opning_hours">
+            	<div class="col">
+                <div class="dayleft">
+                	<h4>Friday</h4>
+                </div>
+                </div>
+                <div class="col">
+                <div class="time_right" ng-if="rest_detail.Time.fcl == '0'">
+                	<h5>Opening Time: {{rest_detail.Time.fopen}}</h5>
+                    <h5>Closing Time: {{rest_detail.Time.fclose}}</h5>
+                </div>
+                    <div class="time_right" ng-if="rest_detail.Time.fcl == '1'">
+                	<h5>Closed</h5>
+                </div>
+                </div>
+            </div>
+            
+            
+            <div class="row opning_hours">
+            	<div class="col">
+                <div class="dayleft">
+                	<h4>Saturday</h4>
+                </div>
+                </div>
+                <div class="col">
+                <div class="time_right" ng-if="rest_detail.Time.satcl == '0'">
+                	<h5>Opening Time: {{rest_detail.Time.satopen}}</h5>
+                    <h5>Closing Time: {{rest_detail.Time.satclose}}</h5>
+                </div>
+                    <div class="time_right" ng-if="rest_detail.Time.satcl == '1'">
+                	<h5>Closed</h5>
+                </div>
+                </div>
+            </div>
+            
+        </div>
+                </div>
+        </div>
+        
+        <h4 style="width: 78%;float: left;font-size: 14px;padding-left: 27px; margin-top: 15px;" ng-if="reviewslenght">Reviews({{reviewslenght}})</h4>
+        <h4 style="width: 78%;float: left;font-size: 14px;padding-left: 27px; margin-top: 15px;" ng-if="reviewslenght == undefined">Reviews (0)</h4>
+        <div  ng-repeat="n in [1,2,3,4,5]" style="float:left; margin: 10px 0;"> 
+            <i class="ion-ios-star user_ratting" ng-class="rest_detail.review_avg >= n ? 'active':''"></i>
+        </div>
+        <div class="padding">
+            <div class="commentssec" ng-if="reviewslenght >= 1">
+                <div class="list" ng-repeat="reviews11 in reviews" >
+                    <a style="border: 1px solid #eee;" class="item comment_list item-avatar" href="#">
+                        <img src="{{reviews11.User.image}}">
+                        <div style="border-bottom: 0px solid #eee;" class="com_list">
+                            <h2>{{reviews11.User.name | uppercase}}</h2>
+                            <p style="margin-bottom: 7px;">{{reviews11.Review.text}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="commentssec" ng-if="reviewslenght == undefined">
+              
+                <div class="list">
+                    <h2 style="float: left;font-size: 15px;">{{'No reviews are avialable'}}</h2>
+                </div>
+            </div>
+            <div ng-if="reviewslenght >= 3">
+                <a href="#" ng-hide="viewmore == 1" style="text-decoration: none;color: #000;width: 50%;text-align: right;float: right;margin-top: 7px;" ng-click="more_reviews()" >View More</a>       
+            </div>       
+        </div>
+        
+        
+        
+        <div class="padding">
+        	<div class="collapsed_list" ng-click="toggleGroup3(group3)">
+        	<a href="#" class=""><i class="" ng-class="isGroupShown3(group3)? 'ion-ios-arrow-up' : 'ion-ios-arrow-down' "></i> CONTACTS</a>
+        
+        <div class="contacts" class= "item-accordion"                  
+                    ng-show="isGroupShown3(group3)">
+        
+        	<div class="padding">
+                <p>{{rest_detail.address}}</p>
+                <p>{{rest_detail.email}}</p>
+                <p>{{rest_detail.owner_phone}}</p>
+            </div>
+        </div>
+                </div>
+        </div>
+        
+    </ion-content>
+
+</ion-view>

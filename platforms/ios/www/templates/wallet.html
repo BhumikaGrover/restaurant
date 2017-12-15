@@ -1,0 +1,42 @@
+<ion-view id="page4" title="Cart" hide-nav-bar="true">
+
+<ion-header-bar align-title="center" id="div1" class="bar-light map_header "  style="background: rgba(0, 81, 105, 1) !important;">
+  <div class="buttons">
+    <button ui-sref="menu.nearestRestaurants" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+      <h1 class="title" style="color:#fff;">Add In Wallet</h4>
+  </div>
+    
+  
+  
+</ion-header-bar>
+
+<ion-content padding="false" style="background-size:cover; top:0; padding-top:44px;" class="manual-remove-top-padding has-header">
+<form name="checkout" ng-submit="walletcc()" ng-controller="walletCtrl">
+        <div class="padding">
+            <div class="box1" style="width:100%; float: left; margin: 49% 0;">
+      
+        <div class="list list-inset billing_add">
+  <label style="margin-bottom: 25px; border-bottom: 1px solid rgba(215, 215, 215, 1);" class="item item-input">
+      <div class="kdbox" style=" width: auto; float: left; text-align: center; color: #999; font-weight: bold;">
+          <span>KD</span>
+      </div>
+      <input style="color:#999; padding-left: 20px;" type="text" placeholder="Add amount" ng-model="data.firstname" name="firstname" required>
+  </label>
+        </div>  
+    
+
+
+   <div class="button-bar button-clear  bar-positive" style="max-height: inherit !important;">
+     <button  type="submit" class="button button-assertive  paypal_btn" style=" border: 1px solid rgba(215, 215, 215, 1);
+    border-radius: 0;  color: #4c4c4c; background:none;">Add Money</button>
+
+    </div>
+            </div>
+        </div>
+    </form> 
+
+        
+    </ion-content>
+    
+
+</ion-view>

@@ -1,0 +1,78 @@
+<ion-view style="" id="page5" title="Nearest Restaurants"  hide-nav-bar="true">
+
+<ion-header-bar align-title="center" class="bar-positive" style="background:url(img/header.jpg) no-repeat; background-size:cover;">
+    <div class="buttons">
+       <button class="button button-clear icon ion-navicon" menu-toggle="left" style="color:#fff; display:block;"></button>
+    </ion-nav-buttons>
+    </div>
+    	<h1 class="title" style="line-height:1;"><span class="top_title">Dubai</span> <span class="sub_title">Jumeirah Beach</span></h1>
+   	<div class="buttons">
+   		<button style="margin-right:20px;" class="button button-clear" ng-click="modal.show()"><i class="icon"><img width="12px" src="img/icon_arrow.png" alt="" /></i></button>
+        <button style="margin-right:5px; margin-top:3px;" class="button button-clear" ng-click="modal1.show()"><i class="icon"><img width="20px" src="img/icon_settings.png" alt="" /></i></button>
+        <button style="margin-top:3px;" class="button button-clear"><i class="icon"><img width="20px" src="img/icon_search.png" alt="" /></i></button>
+ 	</div>
+    
+ </ion-header-bar>
+    <ion-content class="has-header" padding="false">
+        <div class="restaurant_list">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/r1.jpg" height="auto" width="100%">
+                <div class="restaurant_destination">
+                	<h5><i class=""><img src="img/location.png"></i> 100 <br /> METERS</h5>
+                </div>
+                <div class="restaurant_con">
+                	<h1><button class="heart_icon"><img width="20px" src="img/heart-active.png"></button> Eauzone</h1>
+                    <h5>Al Sufouh Rd, Jumeirah Rd, Arabia Courts,</h5>
+                    <span>ITALIAN -50%</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="restaurant_list">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/r2.jpg" height="auto" width="100%">
+                <div class="restaurant_destination">
+                    <h5><i class=""><img src="img/location.png"></i> 100 <br /> METERS</h5>
+                </div>
+                <div class="restaurant_con">
+                    <h1><button class="heart_icon"><img width="20px" src="img/heart-active.png"></button> Al Sarab Rooftop</h1>
+                    <h5>Al Sufouh Rd, Jumeirah Rd, Arabia Courts,</h5>
+                    <span>ITALIAN -50%</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="restaurant_list">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/r3.jpg" height="auto" width="100%">
+                <div class="restaurant_destination">
+                    <h5><i class=""><img src="img/location.png"></i> 100 <br /> METERS</h5>
+                </div>
+                <div class="restaurant_con">
+                    <h1><button class="heart_icon"><img width="20px" src="img/heart-active.png"></button> West Beach Bistro</h1>
+                    <h5>Al Sufouh Rd, Jumeirah Rd, Arabia Courts,</h5>
+                    <span>ITALIAN -50%</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="restaurant_list">
+            <a ui-sref="menu.restaurantDetails" style="display:block;">
+                <img style="display: block; margin-left: auto; margin-right: auto;" src="img/r4.jpg" height="auto" width="100%">
+                <div class="restaurant_destination">
+                    <h5><i class=""><img src="img/location.png"></i> 100 <br /> METERS</h5>
+                </div>
+                <div class="restaurant_con">
+                    <h1><button class="heart_icon"><img width="20px" src="img/heart-active.png"></button> Al Sarab Rooftop</h1>
+                    <h5>Al Sufouh Rd, Jumeirah Rd, Arabia Courts,</h5>
+                    <span>ITALIAN -50%</span>
+                </div>
+            </a>
+        </div>
+       
+        
+    </ion-content>
+     <button class="button button-light button-fab button-fab-bottom-right" id="fab" ui-sref="menu.map">
+            <i class="icon"><img style="margin-top:10px;" width="18px" src="img/geo_icon.png"></i>
+        </button>
+</ion-view>

@@ -1,0 +1,172 @@
+<ion-view style="" id="page8" title="Reservation" hide-nav-bar="true">
+<ion-header-bar align-title="center" id="div2" class="bar-light map_header">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back"></i></button>
+  </div>
+  <h1 class="title">Reservation</h1>
+  
+</ion-header-bar>
+    <ion-content class="has-header" padding="false" style="top:0;" on-scroll="scrollEvent()" delegate-handle="scrollHandle">
+    
+    	<div class="top_slider">
+            <ion-slide-box css="mypager" on-slide-changed="slideHasChanged($index)">
+              <ion-slide ui-sref="menu.gallery">
+                <div class="box blue">
+                    <a ><img src="img/n1.jpg" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                    <h1 style="font-size:48px;">Eauzone</h1>
+                    <h1 style="font-size:48px;">Dubai</h1>
+                    </div>
+                </div>
+              </ion-slide>
+              <ion-slide ng-click="loadImages()" ng-controller="galleryCtrl">
+                <div class="box yellow">
+                    <a href="#"><img src="img/n2.jpg" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                    <h1 style="font-size:48px;">Eauzone</h1>
+                    <h1 style="font-size:48px;">Dubai</h1>
+                    </div>
+                </div>
+              </ion-slide>
+              <ion-slide ui-sref="menu.gallery">
+                <div class="box pink">
+                    <a href="#"><img src="img/n3.jpg" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                    <h1 style="font-size:48px;">Eauzone</h1>
+                    <h1 style="font-size:48px;">Dubai</h1>
+                    </div>
+                </div>
+              </ion-slide>
+              <ion-slide ui-sref="menu.gallery">
+                <div class="box pink">
+                    <a href="#"><img src="img/n1.jpg" alt="" /></a>
+                    <div class="restaurant_con" style="text-align:left;">
+                    <h1 style="font-size:48px;">Eauzone</h1>
+                    <h1 style="font-size:48px;">Dubai</h1>
+                    </div>
+                </div>
+              </ion-slide>
+            </ion-slide-box>
+
+
+        </div>
+    
+        
+        <div class="calender_time">
+        	<div class="row">
+            	<div class="col-50">
+                <div class="row">
+                <div class="col-25"><button class="button button-clear ion-ios-arrow-back arrow_btn"></button></div>
+                <div class="col-50">
+                	<div class="time">
+                    	<h4>AT</h4>
+                        <h2><input type="text" value="20:30" /></h2>
+                    </div>
+                </div>
+                <div class="col-25"><button class="button button-clear ion-ios-arrow-forward arrow_btn"></button></div>
+                    </div>
+                </div>
+                <div class="col-50">
+                
+                <div class="row">
+                <div class="col-25"><button class="button button-clear ion-ios-arrow-back arrow_btn"></button></div>
+                <div class="col-50">
+                	<div class="date">
+                    	<h4>AT</h4>
+                        <h2><input type="text" value="20 AUG" /></h2>
+                    </div>
+                </div>
+                <div class="col-25"><button class="button button-clear ion-ios-arrow-forward arrow_btn"></button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+        <div class="col-25"><button class="button button-clear ion-ios-arrow-back arrow_btn"></button></div>
+                    
+            	<div class="col-50">
+                	<div class="people">
+                    	<h4>DINNER FOR</h4>
+                        <h2>2 People</h2>
+                    </div>
+                </div>
+                <div class="col-25"><button style="float:right;" class="button button-clear ion-ios-arrow-forward arrow_btn"></button></div>
+                    
+                
+            </div>
+            
+            <div class="row">
+            <div class="col">
+        <a ng-click="showConfirm()" style="border-radius:0px 0px 0px 0px;" class="button button_purpel  button-block">SEND REQUEST</a>
+        </div>
+        
+        </div>
+        
+        <ion-list id="restaurantDetails-list2">
+            <ion-item style="white-space:normal; border:none; font-size:10px;" id="restaurantDetails-list-item4" class="item-icon-left">
+                <i class="icon"><img width="25px" src="img/geo_icon.png" alt="" /></i>Al Sufouh Rd, Jumeirah Rd,<br> Arabia Courts, Opp Media City</ion-item>
+        </ion-list>
+        
+        <div class="map_diraction">
+        <a href="#" style="color:#000;">
+            <img src="img/map.jpg" alt="" />
+            <div class="restaurant_destination">
+            
+                    
+            <h5 style="color:#000;"><i class=""><img src="img/detect.png"></i> 100 <br /> METERS</h5>
+                    <span style="float:right; font-size:12px; font-family: 'montserratregular'; ">SHOW DIRECTIONS</span>
+                   
+                </div>
+                 </a>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <div class="padding">
+            <div class="collapsed_list">
+            <a href="#" class=""><i class="ion-ios-arrow-up"></i> INFO</a>
+        </div>
+        </div>
+        <div style="border:none;" id="restaurantDetails-list-item-container1" class="item item-body">
+            <div style="margin-top:0px;color:#000000;" id="restaurantDetails-markdown3">
+                <p class="collaped_txt" style="margin:0;">Ewaan is an all-day dining restaurant that serves a tempting blend of Arabic and Oriental specialities including a large selection of mezzeh. Enjoy shisha and live music on the terrace, or, for a little seclusion, relax in a private dining alcove.On Fridays, a delightful Brunch offers a spread of traditional Arabic specialties and Continental cuisine with live cooking stations, a selection of international and traditional pastries, and house beverages.
+</p>
+                    
+                    <div class="cuisin">
+                    <div class="row">
+                        <div class="col">
+                        <p>CUISINE:</p>
+                        <h4>American</h4>
+                        </div>
+                        
+                        <div class="col">
+                        <P>PRICE:</P>
+                        <h4>$$$<span>$$</span></h4>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        <ion-list id="restaurantDetails-list5">
+            <ion-item style="" id="restaurantDetails-list-item7" class="item-icon-right list_viewmenu">
+                <i style="color:#0F75BC;" class="icon fa fa-link"></i>VIEW MENU</ion-item>
+            <ion-item style="" id="restaurantDetails-list-item8" class="item-icon-right list_viewmenu">
+                <i style="color:#0F75BC;" class="icon fa fa-link"></i>RESTAURANT WEBSITE</ion-item>
+        </ion-list>
+        
+        
+        
+        
+        
+        
+        
+    </ion-content>
+<!-- <div class="bar bar-footer bar-light">
+  <a class="button" style="border-radius:0px 0px 0px 0px; width:100%; background:#662483; color:#fff;" id="restaurantDetails-button8" ui-sref="menu.reservation">RESERVE</a>
+</div> -->
+</ion-view>

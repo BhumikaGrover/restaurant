@@ -1,0 +1,66 @@
+<ion-view style="" id="page2" title="Create Profile" hide-nav-bar="true">
+   <ion-header-bar align-title="center" id="div1" class="" style="background: rgba(0, 81, 105, 0);">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back" style="color:#fff;"></i></button>
+  </div>
+  <h1 class="title" style="color:#fff;">Create Profile</h1>
+  
+</ion-header-bar>
+
+   
+   
+   
+    <ion-content class="has-header" padding="true" style="top: 0 ; background:url(img/slide3.jpg); background-size: cover;">
+        <div style="width: 283px; height: 50px;" class="spacer"></div>
+        <div>
+            <img style="display: block; margin-left: auto; margin-right: auto;" src="img/drop.png" height="auto" width="118px">
+        </div>
+        <form class="create_sec" name="CreateProfile"  ng-submit="CreateProfile.$valid && profile()" novalidate>
+        <div style="width: 283px; height: 35px;" class="spacer"></div>
+       
+            <label id="createProfile-input2" class="item-input input_border">
+                <input style="padding:10px;" placeholder="Name" type="text" name="name" ng-model="data.name" required>
+            </label>
+            <div ng-show="CreateProfile.$submitted || CreateProfile.name.$touched">
+            <div ng-show="CreateProfile.name.$error.required" class="assertive">Field Required</div>
+        </div>
+            <label id="createProfile-input3" class="item-input input_border">
+                <input style="padding:10px;" placeholder="Phone Number (Optional)" type="number" name="phone" ng-model="data.phone">
+            </label>
+<!--             <div ng-show="CreateProfile.$submitted || CreateProfile.phone.$touched">
+             <div ng-show="CreateProfile.phone.$error.required" class="assertive">Field required</div>
+             <div ng-show="CreateProfile.phone.$error.number" class="assertive">The telephone number is not valid</div>
+             <div ng-show="CreateProfile.phone.$error.maxlength" class="assertive">The telephone number is not valid</div>
+             </div>-->
+        
+            <label id="createProfile-input4" class="item-input input_border">
+                <input style="padding:10px;" placeholder="Email Address" type="email" name="email" ng-model="data.email" required>
+            </label>
+          <div ng-show="CreateProfile.$submitted || CreateProfile.email.$touched">
+        <div ng-show="CreateProfile.email.$error.required" class="assertive">Field required</div>
+        </div>
+        <span ng-show="!CreateProfile.email.$error.required && CreateProfile.email.$error.email && CreateProfile.email.$dirty" class="assertive">Invalid Email Address</span>
+            <label id="createProfile-input5" class="item-input input_border">
+                <input style="padding:10px;" placeholder="Password" type="password" name="password" ng-model="data.password" required>
+            </label>
+        <div ng-show="CreateProfile.$submitted || CreateProfile.password.$touched">
+        <div ng-show="CreateProfile.password.$error.required" class="assertive">Field required</div>
+        
+        </div>
+        
+        <label id="createProfile-input5" class="item-input input_border">
+                <input style="padding:10px;" placeholder="Confirm Password" type="password" name="cpassword" ng-model="data.cpassword" required>
+            </label>
+        <div ng-show="CreateProfile.$submitted || CreateProfile.cpassword.$touched">
+        <div ng-show="CreateProfile.cpassword.$error.required" class="assertive">Field required</div>
+        
+       
+        </div>
+        <div class="custom_padding">
+            <button type="submit" class="button button_purpel  button-block" style="border-radius:0px 0px 0px 0px; color:#fff;  border: 1px solid #fff !important;" id="createProfile-button2" style="color:#fff;">SIGN UP</button>
+        </div>
+       </form>
+        <div class="button_txt" id="step1-button5" style="color: #fff !important; text-align: center;">Already have An Account? <span><a ui-sref="menu.step1" style="color: #00b1c2;">Sign In</a></span></div>
+     
+    </ion-content>
+</ion-view>

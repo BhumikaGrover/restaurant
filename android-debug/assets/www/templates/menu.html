@@ -1,0 +1,53 @@
+<ion-side-menus style="" enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu21">
+        <ion-content padding="false" class="side-menu-left">
+        
+        <div class="profile_user" style="background:url(img/n3.jpg) no-repeat; background-size:cover;">
+			<div class="pro_pic">
+            	<a menu-close ui-sref="menu.profile"><img src="img/user2.jpg"></a>
+            </div>
+            <div class="profile_list" href="#" style="height:150px; background:none;">
+              <h2>Catherine Earl</h2>
+              <p>Total Saved: <span> 200 AED</span></p>
+              <a href="#">View Account</a>
+            </div>
+        
+        <button class="button-clear sett_btn"><img src="img/settings.png"></button>
+        </div>
+        
+        
+        
+            <ion-list id="menu-list1">
+            <div class="padding tableres">
+            	<h6>RESERVATION<span class="pending">Pending</span></h6>
+                <h4>Kuwait</h4>
+                <span><i class="ion-ios-calendar-outline"></i> 12.07.2016 08:00PM</span>
+                <span><i class="ion-ios-calendar-person"></i> 4 People</span>
+            </div>
+                <ion-item style="border:none;" menu-close="" ui-sref="menu.nearestRestaurants" id="menu-list-item1" class="item-icon-left slide_nav">Dine
+                    <i class="icon_new"><img width="9px" src="img/dine.png"></i>
+                </ion-item>
+                
+              
+                <ion-item style="border:none;" menu-close="" ui-sref="menu.favorites" id="menu-list-item3" class="item-icon-left slide_nav">Favorites
+                    <i class="icon_new fa fa-heart"></i>
+                </ion-item>
+                <ion-item style="border:none;" menu-close="" ui-sref="menu.slider" id="menu-list-item1" class="item-icon-left slide_nav">Reservation History
+                    <i class="icon_new fa fa-calendar-check-o"></i>
+                </ion-item>
+                <ion-item style="border:none;" menu-close="" ui-sref="menu.history" id="menu-list-item9" class="item-icon-left slide_nav">History
+                    <i class="icon_new fa fa-history"></i>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

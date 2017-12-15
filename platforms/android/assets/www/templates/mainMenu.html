@@ -1,0 +1,72 @@
+
+
+<ion-view title="Menu" id="" hide-nav-bar="true">
+
+<!--<ion-header-bar align-title="center" id="div1" class="" style="background:url(img/header.jpg) no-repeat; background-size:cover; color:#fff;">-->
+<ion-header-bar align-title="center" id="div1" class="" style="background: rgba(0, 81, 105, 1);">
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-android-arrow-back" style="color:#fff;"></i></button>
+  </div>
+  <h1 class="title" style="color:#fff;">Menu List</h1>
+  
+</ion-header-bar>
+
+
+ <!--   <ion-content class="has-header" padding="false" style="background: url(img/login.jpg) no-repeat center;background-size:cover; top:0;">-->
+	   <ion-content class="has-header header_top" padding="false" style="background-size:cover;">	
+        	
+            
+            <div class="listmenure capitalized mynwclslist">	
+                <ul class="list">
+    				<li class="item" ng-repeat="menu1 in resmenu1"  ng-click="pickmenu(menu1.DishCategory.id)">
+     					{{menu1.DishCategory.name}}
+                        <i class="icon ion-ios-arrow-right" style="float: right;"></i>
+    				</li>
+				</ul>
+        	</div><!--listmenure capitalized-->
+        
+        
+ 
+        
+        
+        
+       <!-- <div class="listmenure capitalized">
+            <a ng-repeat="menu1 in resmenu1"  ng-click="pickmenu(menu1.DishCategory.id)"> 
+            
+             {{menu1.DishCategory.name}}</a>
+                 </div>-->
+<!--                <span class="menu_ic">
+                    <i class="icon ion-ios-wineglass-outline"></i>
+                   <img src="{{menu1.DishCategory.image}}">
+                </span>-->
+               
+        	<!--a ui-sref="menu.menuItems"> <span class="menu_ic"><i class="icon ion-ios-wineglass-outline"></i></span> Soup</a>
+            <a ui-sref="menu.menuItems"> <span class="menu_ic"><i class="icon ion-ios-flower-outline"></i></span> Salad</a>
+            <a ui-sref="menu.menuItems"> <span class="menu_ic"><i class="icon ion-ios-sunny-outline"></i></span> Main courses</a>
+            <a ui-sref="menu.menuItems"> <span class="menu_ic"><i class="icon ion-ios-wineglass-outline"></i></span> Side dishes</a>
+            <a ui-sref="menu.menuItems"> <span class="menu_ic"><i class="icon ion-ios-nutrition-outline"></i></span> Desserts</a>
+            <a ui-sref="menu.menuItems"> <span class="menu_ic"><i class="icon ion-ios-rose-outline"></i></span> Cakes</a-->
+       
+        
+        
+        
+        
+
+
+    </ion-content>
+</ion-view>
+
+<style>
+    .listmenure a{padding-left: 0px;}
+
+    .listmenure a {
+    line-height: 25px;
+    min-height: 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 15px;
+}
+    </style>
+    
+    
+    
+  
